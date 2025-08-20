@@ -1,0 +1,8 @@
+# robots.txt for https://invert-image.wwkejishe.top
+User-agent: *
+Allow: /
+Disallow: /*.json
+Disallow: /*?*preview=
+Disallow: /*?*action=
+Host: https://invert-image.wwkejishe.top
+Sitemap: https://invert-image.wwkejishe.top/sitemap.xml
