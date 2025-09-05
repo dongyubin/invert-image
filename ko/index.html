@@ -85,52 +85,6 @@
                 font-size: 14px;
                 cursor: pointer;
             }
-            
-            /* Tutorial styles */
-            .tutorial-steps {
-                counter-reset: tutorial-counter;
-                padding-left: 0;
-            }
-            
-            .tutorial-step {
-                position: relative;
-                list-style-type: none;
-                padding-left: 40px;
-                margin-bottom: 24px;
-                line-height: 1.6;
-            }
-            
-            .tutorial-step::before {
-                counter-increment: tutorial-counter;
-                content: counter(tutorial-counter);
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 28px;
-                height: 28px;
-                background-color: #4A7CFF;
-                color: white;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-weight: bold;
-                font-size: 14px;
-            }
-            
-            .tutorial-image-container {
-                margin: 20px 0;
-                display: flex;
-                justify-content: center;
-            }
-            
-            .tutorial-image {
-                max-width: 100%;
-                height: auto;
-                border-radius: 8px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-                border: 1px solid #eee;
-            }
         </style>
 </head>
 
@@ -365,6 +319,60 @@
                     </svg>
                     다른 이미지 처리
                 </button>
+            </div>
+        </div>
+
+        <!-- Preview Effects Section -->
+        <div class="card preview-effects-section">
+            <h2>효과 미리보기</h2>
+            <p class="section-description">
+                처리하기 전에 다양한 효과가 이미지에 어떻게 적용되는지 확인하세요.
+            </p>
+
+            <div class="preview-effects-grid">
+                <!-- Original Image -->
+                <div class="preview-effect-card">
+                    <div class="preview-effect-label">원본</div>
+                    <div class="preview-effect-image">
+                        <img src="../assets/images/nano-banana.jpeg" alt="원본 이미지" loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Grayscale -->
+                <div class="preview-effect-card">
+                    <div class="preview-effect-label">그레이 스케일</div>
+                    <div class="preview-effect-image">
+                        <img src="../assets/images/nano-banana-convert-to-grayscale.png" alt="그레이 스케일 효과"
+                            loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Horizontal Flip -->
+                <div class="preview-effect-card">
+                    <div class="preview-effect-label">수평으로 뒤집기</div>
+                    <div class="preview-effect-image">
+                        <img src="../assets/images/nano-banana-filp-horizontally.png" alt="수평 반사 효과"
+                            loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Invert Colors -->
+                <div class="preview-effect-card">
+                    <div class="preview-effect-label">이미지 색상 반전</div>
+                    <div class="preview-effect-image">
+                        <img src="../assets/images/nano-banana-invert-colors.png" alt="색상 반전 효과"
+                            loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Vertical Flip -->
+                <div class="preview-effect-card">
+                    <div class="preview-effect-label">수직으로 뒤집기</div>
+                    <div class="preview-effect-image">
+                        <img src="../assets/images/nano-banana-flip-vertically.png" alt="수직 반사 효과"
+                            loading="lazy">
+                    </div>
+                </div>
             </div>
         </div>
 

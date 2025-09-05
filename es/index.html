@@ -92,50 +92,6 @@
                 text-align: center;
             }
         }
-        
-        /* Tutorial styles */
-        .tutorial-steps {
-            margin-top: 20px;
-        }
-        
-        .tutorial-step {
-            margin-bottom: 30px;
-            padding: 20px;
-            background: var(--card-bg);
-            border-radius: var(--radius);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        }
-        
-        .step-title {
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-        
-        .tutorial-image-container {
-            margin-top: 15px;
-            display: flex;
-            justify-content: center;
-        }
-        
-        .tutorial-image {
-            max-height: 300px;
-            border-radius: var(--radius);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            object-fit: contain;
-            max-width: 100%;
-        }
-        
-        @media (max-width: 768px) {
-            .tutorial-step {
-                padding: 15px;
-            }
-            
-            .tutorial-image {
-                max-height: 200px;
-            }
-        }
     </style>
 </head>
 
@@ -374,6 +330,60 @@
                     </svg>
                     Procesar Otra
                 </button>
+            </div>
+        </div>
+
+        <!-- Preview Effects Section -->
+        <div class="card preview-effects-section">
+            <h2>Vista Previa de Efectos</h2>
+            <p class="section-description">
+                Ve cómo diferentes efectos se aplican a tus imágenes antes del procesamiento.
+            </p>
+
+            <div class="preview-effects-grid">
+                <!-- Original Image -->
+                <div class="preview-effect-card">
+                    <div class="preview-effect-label">Original</div>
+                    <div class="preview-effect-image">
+                        <img src="../assets/images/nano-banana.jpeg" alt="Imagen original" loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Grayscale -->
+                <div class="preview-effect-card">
+                    <div class="preview-effect-label">Escala de Grises</div>
+                    <div class="preview-effect-image">
+                        <img src="../assets/images/nano-banana-convert-to-grayscale.png" alt="Efecto escala de grises"
+                            loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Horizontal Flip -->
+                <div class="preview-effect-card">
+                    <div class="preview-effect-label">Voltear Horizontalmente</div>
+                    <div class="preview-effect-image">
+                        <img src="../assets/images/nano-banana-filp-horizontally.png" alt="Efecto espejo horizontal"
+                            loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Invert Colors -->
+                <div class="preview-effect-card">
+                    <div class="preview-effect-label">Invertir Colores</div>
+                    <div class="preview-effect-image">
+                        <img src="../assets/images/nano-banana-invert-colors.png" alt="Efecto inversión de colores"
+                            loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Vertical Flip -->
+                <div class="preview-effect-card">
+                    <div class="preview-effect-label">Voltear Verticalmente</div>
+                    <div class="preview-effect-image">
+                        <img src="../assets/images/nano-banana-flip-vertically.png" alt="Efecto espejo vertical"
+                            loading="lazy">
+                    </div>
+                </div>
             </div>
         </div>
 

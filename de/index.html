@@ -85,52 +85,6 @@
                 font-size: 14px;
                 cursor: pointer;
             }
-            
-            /* Tutorial styles */
-            .tutorial-steps {
-                counter-reset: tutorial-counter;
-                padding-left: 0;
-            }
-            
-            .tutorial-step {
-                position: relative;
-                list-style-type: none;
-                padding-left: 40px;
-                margin-bottom: 24px;
-                line-height: 1.6;
-            }
-            
-            .tutorial-step::before {
-                counter-increment: tutorial-counter;
-                content: counter(tutorial-counter);
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 28px;
-                height: 28px;
-                background-color: #4A7CFF;
-                color: white;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-weight: bold;
-                font-size: 14px;
-            }
-            
-            .tutorial-image-container {
-                margin: 20px 0;
-                display: flex;
-                justify-content: center;
-            }
-            
-            .tutorial-image {
-                max-width: 100%;
-                height: auto;
-                border-radius: 8px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-                border: 1px solid #eee;
-            }
         </style>
 </head>
 
@@ -368,6 +322,60 @@
                     </svg>
                     Neues Bild Verarbeiten
                 </button>
+            </div>
+        </div>
+
+        <!-- Preview Effects Section -->
+        <div class="card preview-effects-section">
+            <h2>Effektvorschau</h2>
+            <p class="section-description">
+                Sehen Sie, wie sich verschiedene Effekte auf Ihre Bilder vor der Verarbeitung auswirken.
+            </p>
+
+            <div class="preview-effects-grid">
+                <!-- Original Image -->
+                <div class="preview-effect-card">
+                    <div class="preview-effect-label">Original</div>
+                    <div class="preview-effect-image">
+                        <img src="../assets/images/nano-banana.jpeg" alt="Original image" loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Grayscale -->
+                <div class="preview-effect-card">
+                    <div class="preview-effect-label">Graustufen</div>
+                    <div class="preview-effect-image">
+                        <img src="../assets/images/nano-banana-convert-to-grayscale.png" alt="Graustufen effect"
+                            loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Horizontal Flip -->
+                <div class="preview-effect-card">
+                    <div class="preview-effect-label">Horizontal spiegeln</div>
+                    <div class="preview-effect-image">
+                        <img src="../assets/images/nano-banana-filp-horizontally.png" alt="Horizontal flip effect"
+                            loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Invert Colors -->
+                <div class="preview-effect-card">
+                    <div class="preview-effect-label">Farben invertieren</div>
+                    <div class="preview-effect-image">
+                        <img src="../assets/images/nano-banana-invert-colors.png" alt="Inverted colors effect"
+                            loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Vertical Flip -->
+                <div class="preview-effect-card">
+                    <div class="preview-effect-label">Vertikal spiegeln</div>
+                    <div class="preview-effect-image">
+                        <img src="../assets/images/nano-banana-flip-vertically.png" alt="Vertical flip effect"
+                            loading="lazy">
+                    </div>
+                </div>
             </div>
         </div>
 

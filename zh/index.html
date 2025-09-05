@@ -92,57 +92,6 @@
                 text-align: center;
             }
         }
-        
-        /* 教程样式 */
-        .tutorial-steps {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        
-        .tutorial-step {
-            margin-bottom: 25px;
-            padding-bottom: 25px;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        }
-        
-        .tutorial-step:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-        
-        .tutorial-step strong {
-            color: var(--primary-dark);
-            font-size: 1.1rem;
-            display: block;
-            margin-bottom: 10px;
-        }
-        
-        .step-description {
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-        
-        .tutorial-image-container {
-            margin: 15px 0;
-            display: flex;
-            justify-content: center;
-        }
-        
-        .tutorial-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: var(--radius);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            max-height: 300px;
-            object-fit: contain;
-        }
-        
-        @media (max-width: 768px) {
-            .tutorial-image {
-                max-height: 200px;
-            }
-        }
     </style>
 </head>
 
@@ -379,6 +328,60 @@
                     </svg>
                     处理另一张图片
                 </button>
+            </div>
+        </div>
+
+        <!-- Preview Effects Section -->
+        <div class="card preview-effects-section">
+            <h2>效果预览</h2>
+            <p class="section-description">
+                在处理前查看不同效果如何转换您的图像。
+            </p>
+
+            <div class="preview-effects-grid">
+                <!-- Original Image -->
+                <div class="preview-effect-card">
+                    <div class="preview-effect-label">原图</div>
+                    <div class="preview-effect-image">
+                        <img src="../assets/images/nano-banana.jpeg" alt="Original image" loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Grayscale -->
+                <div class="preview-effect-card">
+                    <div class="preview-effect-label">灰度</div>
+                    <div class="preview-effect-image">
+                        <img src="../assets/images/nano-banana-convert-to-grayscale.png" alt="Grayscale effect"
+                            loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Horizontal Flip -->
+                <div class="preview-effect-card">
+                    <div class="preview-effect-label">水平翻转</div>
+                    <div class="preview-effect-image">
+                        <img src="../assets/images/nano-banana-filp-horizontally.png" alt="Horizontal flip effect"
+                            loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Invert Colors -->
+                <div class="preview-effect-card">
+                    <div class="preview-effect-label">颜色反转</div>
+                    <div class="preview-effect-image">
+                        <img src="../assets/images/nano-banana-invert-colors.png" alt="Inverted colors effect"
+                            loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Vertical Flip -->
+                <div class="preview-effect-card">
+                    <div class="preview-effect-label">垂直翻转</div>
+                    <div class="preview-effect-image">
+                        <img src="../assets/images/nano-banana-flip-vertically.png" alt="Vertical flip effect"
+                            loading="lazy">
+                    </div>
+                </div>
             </div>
         </div>
 
