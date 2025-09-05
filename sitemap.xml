@@ -1,10 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- 首页 -->
-  <url>
-    <loc>https://invert-image.wwkejishe.top/</loc>
-    <lastmod>2025-08-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <!-- Main pages -->
+    <url>
+        <loc>https://invert-image.wwkejishe.top/</loc>
+        <lastmod>2024-03-26</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- Chinese version -->
+    <url>
+        <loc>https://invert-image.wwkejishe.top/zh/</loc>
+        <lastmod>2024-03-26</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://invert-image.wwkejishe.top/zh/" />
+    </url>
+    
+    <!-- Japanese version -->
+    <url>
+        <loc>https://invert-image.wwkejishe.top/ja/</loc>
+        <lastmod>2024-03-26</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://invert-image.wwkejishe.top/ja/" />
+    </url>
+    
+    <!-- Spanish version -->
+    <url>
+        <loc>https://invert-image.wwkejishe.top/es/</loc>
+        <lastmod>2024-03-26</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://invert-image.wwkejishe.top/es/" />
+    </url>
+    
+    <!-- French version -->
+    <url>
+        <loc>https://invert-image.wwkejishe.top/fr/</loc>
+        <lastmod>2024-03-26</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://invert-image.wwkejishe.top/fr/" />
+    </url>
+    
+    <!-- German version -->
+    <url>
+        <loc>https://invert-image.wwkejishe.top/de/</loc>
+        <lastmod>2024-03-26</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="de" href="https://invert-image.wwkejishe.top/de/" />
+    </url>
+    
+    <!-- Italian version -->
+    <url>
+        <loc>https://invert-image.wwkejishe.top/it/</loc>
+        <lastmod>2024-03-26</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="it" href="https://invert-image.wwkejishe.top/it/" />
+    </url>
+    
+    <!-- Korean version -->
+    <url>
+        <loc>https://invert-image.wwkejishe.top/ko/</loc>
+        <lastmod>2024-03-26</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://invert-image.wwkejishe.top/ko/" />
+    </url>
 </urlset>

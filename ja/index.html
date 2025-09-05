@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="../assets/images/favicon-57x57.png" type="image/png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="../assets/images/favicon-60x60.png" type="image/png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="../assets/images/favicon-72x72.png" type="image/png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="../assets/images/favicon-114x114.png" type="image/png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="../assets/images/favicon-120x120.png" type="image/png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="../assets/images/favicon-144x144.png" type="image/png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="../assets/images/favicon-152x152.png" type="image/png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicon-180x180.png" type="image/png" />
+    <link rel="icon" sizes="16x16" href="../assets/images/favicon-16x16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="../assets/images/favicon-32x32.png" type="image/png" />
+    <link rel="icon" sizes="96x96" href="../assets/images/favicon-96x96.png" type="image/png" />
+    <link rel="icon" sizes="192x192" href="../assets/images/favicon-192x192.png" type="image/png" />
+    <link rel="icon" sizes="512x512" href="../assets/images/favicon-512x512.png" type="image/png" />
+    <link rel="manifest" href="../assets/images/manifest.json" />
+    <meta name="theme-color" content="#FFFFFF" />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="../assets/images/favicon-512x512.png" />
+    
+    <!-- SEO & OpenGraph -->
+    <title>無料オンラインカラー反転・画像反転ツール | 写真の反転と白黒写真生成</title>
+    <meta name="description" content="即座にカラー反転、画像反転、写真の反転を無料でオンラインで行うことができます。左右/上下反転や白黒写真の生成も可能 — 100%安全、アップロード不要。" />
+    
+    <!-- Keywords in order of priority -->
+    <meta name="keywords" content="カラー反転, 画像反転, 写真の反転, 白黒写真, オンラインツール, 無料, グレースケール, 画像を反転, ミラー画像, オンラインカラー反転, オンライン画像反転" />
+    
+    <!-- OpenGraph / Twitter -->
+    <meta property="og:title" content="カラー反転・画像反転オンラインツール — 無料" />
+    <meta property="og:description" content="カラー反転、画像反転、写真の反転や白黒写真の生成 — すべてブラウザ内で完了、ファイルのアップロード不要。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://invert-image.wwkejishe.top/ja/" />
+    <meta property="og:image" content="../assets/images/og.png" />
+    <meta property="og:image:alt" content="白黒写真のカラー反転効果プレビュー" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="カラー反転・画像反転オンラインツール — 無料" />
+    <meta name="twitter:description" content="カラー反転、画像反転、写真の反転や白黒写真の生成 — すべてブラウザ内で完了、ファイルのアップロード不要。" />
+    <meta name="twitter:image" content="../assets/images/og.png" />
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "カラー反転・画像反転オンラインツール",
+        "alternateName": "無料写真の反転・白黒写真コンバーター",
+        "description": "即座にカラー反転、画像反転、写真の反転を無料でオンラインで行うことができます。左右/上下反転や白黒写真の生成も可能 — ファイルのアップロード不要。",
+        "url": "https://invert-image.wwkejishe.top/ja/",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "JPY",
+            "availability": "https://schema.org/InStock"
+        },
+        "featureList": ["カラー反転", "画像反転", "写真の反転", "画像を反転", "グレースケール", "白黒写真"],
+        "image": "../assets/images/og.png"
+        }
+    </script>
+    
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <style>
+        /* Language switcher styles */
+        .language-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        
+        .language-switcher select {
+            padding: 8px 12px;
+            border: 1px solid var(--primary);
+            border-radius: var(--radius);
+            background: var(--card-bg);
+            color: var(--primary);
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .language-switcher {
+                position: static;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+        }
+        
+        /* Tutorial styles */
+        .tutorial-steps {
+            margin-top: 20px;
+        }
+        
+        .tutorial-step {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .step-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .tutorial-image-container {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .tutorial-image {
+            max-height: 300px;
+            border-radius: var(--radius);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            object-fit: contain;
+            max-width: 100%;
+        }
+        
+        @media (max-width: 768px) {
+            .tutorial-step {
+                padding: 15px;
+            }
+            
+            .tutorial-image {
+                max-height: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Language switcher -->
+        <div class="language-switcher">
+            <select onchange="switchLanguage(this.value)">
+                <option value="en">English</option>
+                <option value="zh">简体中文</option>
+                <option value="ja" selected>日本語</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+                <option value="de">Deutsch</option>
+                <option value="it">Italiano</option>
+                <option value="ko">한국어</option>
+            </select>
+        </div>
+        
+        <!-- Header with high keyword density -->
+        <header>
+            <div class="logo">
+                <a href="../">カラー反転 & 画像反転</a>
+            </div>
+            
+            <!-- Main title: contains 4 core keywords -->
+            <h1 class="sr-only">
+                無料オンラインカラー反転 — 無料画像反転と写真の反転ツール、白黒写真生成
+            </h1>
+            
+            <!-- Subtitle: reinforces keywords and value proposition -->
+            <p class="subtitle">
+                即座に<strong>カラー反転</strong>、<strong>画像反転</strong>または<strong>写真の反転</strong>
+                ファイルを行い、
+                左右/上下反転、あらゆる画像を<strong>白黒写真</strong>
+                に変換します —
+                100% ブラウザ内処理、ファイルのアップロード不要。
+            </p>
+        </header>
+        
+        <!-- Info ribbon: repeats keywords + trust badge -->
+        <div class="info-ribbon">
+            <p>
+                🛡️ 100% 安全 — すべての<strong>カラー反転</strong>、<strong>画像反転</strong>、<strong>写真の
+                    反転</strong>
+                および<strong>白黒写真</strong>の処理はブラウザ内で行われます。
+            </p>
+        </div>
+        
+        <!-- Maximized keyword density + SEO-friendly copy -->
+        <div class="main-content-wrapper">
+            
+            <!-- Upload card -->
+            <div class="card upload-card">
+                <div class="upload-area" id="uploadArea" aria-label="カラー反転と画像反転のためのアップロード領域">
+                    <div id="uploadContent">
+                        <div class="upload-icon">
+                            <!-- SVG remains unchanged, maintaining semantics -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                                <path
+                                    d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z" />
+                            </svg>
+                        </div>
+                        <div class="upload-text">ドラッグアンドドロップで<strong>カラー反転</strong></div>
+                        <p class="upload-hint">またはクリックして<strong>写真の反転</strong>や<strong>白黒写真</strong>を選択</p>
+                    </div>
+
+                    <img id="uploadedImagePreview" alt="画像反転前プレビュー">
+                    <button id="clearUploadBtn" class="btn btn-secondary" style="display:none;"
+                        aria-label="アップロードされた画像をクリア">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                            fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
+                            <path
+                                d="M12.438 3H11V2.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0-.5.5V3H3.562a.5.5 0 0 0-.496.592L3 4.5l.394 8.767A2 2 0 0 0 5.38 15h5.24a2 2 0 0 0 1.986-1.733L12.606 4.5l-.066-.908a.5.5 0 0 0-.496-.592zM8 4a.5.5 0 0 0-.5.5v5a.5.5 0 0 0 1 0v-5A.5.5 0 0 0 8 4zm-2.5 0a.5.5 0 0 0-.5.5v5a.5.5 0 0 0 1 0v-5a.5.5 0 0 0-.5-.5zm5 0a.5.5 0 0 0-.5.5v5a.5.5 0 0 0 1 0v-5a.5.5 0 0 0-.5-.5z" />
+                        </svg>
+                        画像をクリア
+                    </button>
+
+                    <input type="file" id="fileInput" accept="image/*" aria-label="カラー反転するファイルを選択">
+                </div>
+            </div>
+
+            <!-- Processing options card -->
+            <div id="processingSection" class="card options-card">
+                <h2><strong>カラー反転</strong>、<strong>画像反転</strong>、<strong>写真の反転</strong>と<strong>白黒写真</strong>の処理オプション</h2>
+                <p class="section-description">
+                    効果を組み合わせて、見事な<strong>カラー反転</strong>や古典的な<strong>白黒写真</strong>をワンクリックで作成しましょう。
+                </p>
+
+                <div class="options-grid">
+                    <!-- Invert Colors -->
+                    <div class="option-card" id="invertOption">
+                        <div class="option-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em"
+                                height="1em" fill="currentColor" viewBox="0 0 16 16">
+                                <path
+                                    d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.995 16 0 12.006 0 7.651 0 4.117 2.295 1.023 5.697.069A.752.752 0 0 1 6 .278M4.858 1.311A7.269 7.269 0 0 0 1.025 7.3c0 4.02 3.279 7.276 7.32 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.22-2.3.648-3.375z" />
+                            </svg>
+                        </div>
+                        <div class="option-title">カラー反転</div>
+                        <p class="option-desc">
+                            即座に<strong>カラー反転</strong>して、<strong>画像反転</strong>や<strong>写真の反転</strong>で劇的なネガティブ効果やアーティスティックな効果を作成します。
+                        </p>
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="invertCheck" checked>
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+
+                    <!-- Flip Horizontal -->
+                    <div class="option-card" id="flipHorizontalOption">
+                        <div class="option-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em"
+                                height="1em" fill="currentColor" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 5a.5.5 0 0 0 .5.5h5a.5.5 0 0 0 0-1h-5A.5.5 0 0 0 8 5M3.854 5.146a.5.5 0 1 0-.708.708l.647.646-.647.646a.5.5 0 1 0 .708.708l.646-.647.646.647a.5.5 0 0 0 .708-.708l-.647-.646.647-.646a.5.5 0 0 0-.708-.708l-.646.647zm.792-1.5a.5.5 0 0 1 0 1h-1A1.5 1.5 0 0 0 2 6.5v7a1.5 1.5 0 0 0 1.5 1.5h8a1.5 1.5 0 0 0 1.5-1.5v-4a.5.5 0 0 0-1 0v4a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5z" />
+                            </svg>
+                        </div>
+                        <div class="option-title">水平反転</div>
+                        <p class="option-desc">創造的な対称性のために<strong>画像反転</strong>を左右反転します。</p>
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="flipHorizontalCheck">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+
+                    <!-- Flip Vertical -->
+                    <div class="option-card" id="flipVerticalOption">
+                        <div class="option-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em"
+                                height="1em" fill="currentColor" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 1a.5.5 0 0 0-.5.5v12a.5.5 0 0 0 1 0v-12A.5.5 0 0 0 8 1m3.354 8.146a.5.5 0 0 0-.708.708l.647.646-.647.646a.5.5 0 0 0 .708.708l.646-.647.646.647a.5.5 0 0 0 .708-.708l-.647-.646.647-.646a.5.5 0 0 0-.708-.708l-.646.647zM2.5 12a.5.5 0 0 1 0-1h1a.5.5 0 0 1 0 1zm3 0a.5.5 0 0 1 0-1h1a.5.5 0 0 1 0 1zm3 0a.5.5 0 0 1 0-1h1a.5.5 0 0 1 0 1z" />
+                            </svg>
+                        </div>
+                        <div class="option-title">垂直反転</div>
+                        <p class="option-desc">独特な視点のために<strong>写真の反転</strong>を上下反転します。</p>
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="flipVerticalCheck">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+
+                    <!-- Grayscale / Black and White Photos -->
+                    <div class="option-card" id="grayscaleOption">
+                        <div class="option-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em"
+                                height="1em" fill="currentColor" viewBox="0 0 16 16">
+                                <path
+                                    d="M6 4c.456 0 .816.4.722.833C6.445 6.025 6 7.315 6 8.5s.445 2.475.722 3.667A.726.726 0 0 1 6 13a.72.72 0 0 1-.71-.833C5.555 10.975 6 9.685 6 8.5s-.445-2.475-.71-3.667A.72.72 0 0 1 6 4m0-1a1.72 1.72 0 0 0-1.71 1.833c.218 1.02.71 2.509.71 4.167 0 1.658-.492 3.148-.71 4.167A1.72 1.72 0 0 0 6 14a1.72 1.72 0 0 0 1.71-1.833c-.218-1.02-.71-2.509-.71-4.167 0-1.658.492-3.148.71-4.167A1.72 1.72 0 0 0 6 3M10 4c.456 0 .816.4.722.833C10.445 6.025 10 7.315 10 8.5s.445 2.475.722 3.667A.726.726 0 0 1 10 13a.72.72 0 0 1-.71-.833c-.218-1.02-.71-2.509-.71-4.167 0-1.658.492-3.148.71-4.167A.72.72 0 0 1 10 4m0-1a1.72 1.72 0 0 0-1.71 1.833c.218 1.02.71 2.509.71 4.167 0 1.658-.492 3.148-.71 4.167A1.72 1.72 0 0 0 10 14a1.72 1.72 0 0 0 1.71-1.833c-.218-1.02-.71-2.509-.71-4.167 0-1.658.492-3.148.71-4.167A1.72 1.72 0 0 0 10 3" />
+                            </svg>
+                        </div>
+                        <div class="option-title">グレースケールに変換</div>
+                        <p class="option-desc">
+                            あらゆる画像を豊かなトーンの古典的な<strong>白黒写真</strong>に変換します。
+                        </p>
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="grayscaleCheck">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="process-section">
+                    <button id="processBtn" class="btn btn-primary" disabled
+                        aria-label="カラー反転と画像反転を処理">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                            fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
+                            <path
+                                d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9" />
+                            <path fill-rule="evenodd"
+                                d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z" />
+                        </svg>
+                        画像を処理
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="resultSection" class="card section-hidden fade-in">
+            <h2>処理結果</h2>
+            <div class="image-preview-container">
+                <div class="preview-box">
+                    <div class="preview-label">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z" />
+                        </svg>
+                        元の画像
+                    </div>
+                    <div class="preview-area">
+                        <img id="originalImage" alt="元の画像プレビュー">
+                        <span id="originalImagePlaceholder">画像をアップロードするとここに元の画像が表示されます。</span>
+                    </div>
+                </div>
+
+                <div class="preview-box">
+                    <div class="preview-label">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M14 4.5V14a2 2 0 0 1-2 2h-2V3.5L14 4.5zM3.5 10.5a.5.5 0 0 1 0-1h9a.5.5 0 0 1 0 1h-9zm0-2a.5.5 0 0 1 0-1h9a.5.5 0 0 1 0 1h-9zm0-2a.5.5 0 0 1 0-1h9a.5.5 0 0 1 0 1h-9z" />
+                        </svg>
+                        処理後の画像
+                    </div>
+                    <div class="preview-area">
+                        <canvas id="canvas"></canvas>
+                        <span id="processedImagePlaceholder">処理後の画像がここに表示されます。</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button id="downloadBtn" class="btn btn-success">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                        viewBox="0 0 16 16" style="margin-right: 8px;">
+                        <path
+                            d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                        <path
+                            d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
+                    </svg>
+                    結果をダウンロード
+                </button>
+                <button id="newFileBtn" class="btn btn-secondary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                        viewBox="0 0 16 16" style="margin-right: 8px;">
+                        <path d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
+                        <path
+                            d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
+                    </svg>
+                    別の画像を処理
+                </button>
+            </div>
+        </div>
+
+        <!-- SEO-Optimized FAQ Section – maximum keyword coverage -->
+        <div class="faq-section">
+            <h2>画像編集よくある質問 (FAQ)</h2>
+
+            <!-- 1 -->
+            <div class="faq-item">
+                <h3 class="question">カラー反転、画像反転、写真の反転とは何ですか？</h3>
+                <p class="answer">
+                    <strong>カラー反転</strong>とは、<strong>画像反転</strong>や<strong>写真の反転</strong>に含まれる各ピクセルを数学的にその補色の反対に変換することです — 黒は白に、赤はシアンになります。この「ネガティブ」効果は、コンテキストによって<em>カラー反転</em>、<em>画像反転</em>、または<em>写真の反転</em>と呼ばれます。
+                </p>
+            </div>
+
+            <!-- 2 -->
+            <div class="faq-item">
+                <h3 class="question">クリエイティブプロジェクトでカラー反転や写真の反転を行う理由は何ですか？</h3>
+                <p class="answer">
+                    アーティストやデザイナーは<strong>カラー反転</strong>を使用して、超現実的な視覚効果を作り、隠れた細部を明らかにしたり、古典的なフィルムネガティブを模倣したりします。ポスター用に<strong>画像反転</strong>したり、ソーシャルメディア用に<strong>写真の反転</strong>したりする場合でも、この劇的な変化は即座に目を引くコントラストを追加します。
+                </p>
+            </div>
+
+            <!-- 3 -->
+            <div class="faq-item">
+                <h3 class="question">カラー反転や画像反転は写真の品質を低下させますか？</h3>
+                <p class="answer">
+                    いいえ。<strong>カラー反転</strong>や<strong>画像反転</strong>のプロセスは非破壊的なピクセル値変換です；解像度と鮮鋭度はそのまま維持されます。すべてがローカルで実行されるため、元の<strong>写真の反転</strong>ファイルは完全なままです。
+                </p>
+            </div>
+
+            <!-- 4 -->
+            <div class="faq-item">
+                <h3 class="question">無料オンラインツールを使用してカラー反転、画像反転、写真の反転をすばやく行うにはどうすればよいですか？</h3>
+                <p class="answer">
+                    <div class="tutorial-steps">
+                        <div class="tutorial-step">
+                            <h4 class="step-title">ステップ 1: 画像をアップロード</h4>
+                            <p>ファイルをドラッグアンドドロップするかクリックして写真を選択します。</p>
+                            <div class="tutorial-image-container">
+                                <img src="../assets/images/Upload-Your-Image.png" alt="画像アップロード方法" class="tutorial-image">
+                            </div>
+                        </div>
+                        
+                        <div class="tutorial-step">
+                            <h4 class="step-title">ステップ 2: カラー反転オプションを選択</h4>
+                            <p>「<strong>カラー反転</strong>」スイッチをオンにします。必要に応じて他の効果を追加することもできます。</p>
+                            <div class="tutorial-image-container">
+                                <img src="../assets/images/Select-the-Invert-Colors-Option.png" alt="カラー反転オプションの選択" class="tutorial-image">
+                            </div>
+                        </div>
+                        
+                        <div class="tutorial-step">
+                            <h4 class="step-title">ステップ 3: 効果を確認</h4>
+                            <p><strong>画像反転</strong>効果が即座に表示されるのを見てください。必要に応じて調整を行います。</p>
+                        </div>
+                        
+                        <div class="tutorial-step">
+                            <h4 class="step-title">ステップ 4: 結果をダウンロード</h4>
+                            <p>完成した<strong>写真の反転</strong>ファイルをダウンロードします — すべての処理はブラウザ内で行われるため、データはデバイスから離れることはありません。</p>
+                            <div class="tutorial-image-container">
+                                <img src="../assets/images/Invert-Colors-Result.png" alt="カラー反転結果" class="tutorial-image">
+                            </div>
+                        </div>
+                    </div>
+                </p>
+            </div>
+
+            <!-- 5 -->
+            <div class="faq-item">
+                <h3 class="question">白黒写真とは何ですか？グレースケールや減色画像とどのように違いますか？</h3>
+                <p class="answer">
+                    <strong>白黒写真</strong> — 技術的には「グレースケール」 — は純粋な黒から純粋な白までの色調のみを含み、すべての色相情報が削除されます。本物の<strong>白黒写真</strong>は光、影、テクスチャを強調しますが、単純な減色はフラットに見えることがあります。
+                </p>
+            </div>
+
+            <!-- 6 -->
+            <div class="faq-item">
+                <h3 class="question">ストーリーテリングのためにカラー写真を白黒写真に変換する理由は何ですか？</h3>
+                <p class="answer">
+                    <strong>白黒写真</strong>に変換することで、色彩の邪魔が取り除かれ、観者の注意が感情、形状、物語に向けられます。<strong>白黒写真</strong>の永遠の感じは、ポートレート、風景、ストリートスナップにも懐かしさと芸術的な深みを加えます。
+                </p>
+            </div>
+
+            <!-- 7 -->
+            <div class="faq-item">
+                <h3 class="question">オンラインコンバーターを使用して、どのようにして任意の画像から高品質な白黒写真を作成できますか？</h3>
+                <p class="answer">
+                    写真をアップロードし、「<strong>白黒写真</strong>に変換」を有効にして、処理をクリックします。私たちの知覚グレースケールアルゴリズムは、色を輝度値にマッピングし、あなたがダウンロードするすべての<strong>白黒写真</strong>に豊かなトーン範囲と鮮明なディテールを提供します。
+                </p>
+            </div>
+
+            <!-- 8 -->
+            <div class="faq-item">
+                <h3 class="question">白黒写真のカラー反転を行って、ネガティブフィルムのユニークな外観を作ることはできますか？</h3>
+                <p class="answer">
+                    もちろんです。<strong>白黒写真</strong>の<strong>カラー反転</strong>を行うと、モノクロトーンが反転します — 黒が白に、白が黒になります — 数秒以内に古典的なフィルムネガティブの美学を再現します。
+                </p>
+            </div>
+
+            <!-- 9 -->
+            <div class="faq-item">
+                <h3 class="question">複数の画像や写真ファイルを一括で反転させることはできますか？</h3>
+                <p class="answer">
+                    現在、当ツールはローカルでのゼロアップロードセキュリティを保証するために、一度に1つのファイルのみを処理しています。<strong>画像反転</strong>や<strong>写真の反転</strong>ファイルを順次処理するには、手順を繰り返してください。
+                </p>
+            </div>
+
+            <!-- 10 -->
+            <div class="faq-item">
+                <h3 class="question">カラー反転、画像反転、白黒写真の作成時にサポートされているファイル形式は何ですか？</h3>
+                <p class="answer">
+                    JPG、PNG、WebP、BMP、GIFファイル（最大20MB）から<strong>カラー反転</strong>を行ったり、<strong>白黒写真</strong>に変換したりできます。これはどの現代的なブラウザでも直接行えます。
+                </p>
+            </div>
+        </div>
+
+        <footer>
+            Copyright 2025 &copy; <a href="../" style="color:#333;">カラー反転 & 画像反転</a>. 全著作権所有。
+        </footer>
+    </div>
+
+    <script src="../assets/js/index.js"></script>
+    <script>
+        // Language switching function
+        function switchLanguage(lang) {
+            const langPaths = {
+                'en': '../',
+                'zh': '../zh/',
+                'ja': '../ja/',
+                'es': '../es/',
+                'fr': '../fr/',
+                'de': '../de/',
+                'it': '../it/',
+                'ko': '../ko/'
+            };
+            
+            if (langPaths[lang]) {
+                window.location.href = langPaths[lang];
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="../assets/images/favicon-57x57.png" type="image/png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="../assets/images/favicon-60x60.png" type="image/png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="../assets/images/favicon-72x72.png" type="image/png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="../assets/images/favicon-114x114.png" type="image/png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="../assets/images/favicon-120x120.png" type="image/png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="../assets/images/favicon-144x144.png" type="image/png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="../assets/images/favicon-152x152.png" type="image/png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicon-180x180.png" type="image/png" />
+    <link rel="icon" sizes="16x16" href="../assets/images/favicon-16x16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="../assets/images/favicon-32x32.png" type="image/png" />
+    <link rel="icon" sizes="96x96" href="../assets/images/favicon-96x96.png" type="image/png" />
+    <link rel="icon" sizes="192x192" href="../assets/images/favicon-192x192.png" type="image/png" />
+    <link rel="icon" sizes="512x512" href="../assets/images/favicon-512x512.png" type="image/png" />
+    <link rel="manifest" href="../assets/images/manifest.json" />
+    <meta name="theme-color" content="#FFFFFF" />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="../assets/images/favicon-512x512.png" />
+    
+    <!-- SEO & OpenGraph -->
+    <title>免费在线颜色反转和图片反转工具 | 一键反转照片与黑白照片生成</title>
+    <meta name="description" content="立即在线免费反转颜色、反转图片或反转照片。支持水平/垂直翻转，以及生成经典黑白照片 — 100%安全，无需上传。" />
+    
+    <!-- Keywords in order of priority -->
+    <meta name="keywords" content="颜色反转, 图片反转, 照片反转, 黑白照片, 在线工具, 免费, 灰度, 翻转图片, 镜像图片, 在线反转颜色, 在线反转图片" />
+    
+    <!-- OpenGraph / Twitter -->
+    <meta property="og:title" content="颜色反转与图片反转在线工具 — 免费使用" />
+    <meta property="og:description" content="颜色反转、图片反转或照片反转，以及生成黑白照片 — 所有操作均在浏览器内完成，无需上传任何文件。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://invert-image.wwkejishe.top/zh/" />
+    <meta property="og:image" content="../assets/images/og.png" />
+    <meta property="og:image:alt" content="黑白照片上的颜色反转效果预览" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="颜色反转与图片反转在线工具 — 免费使用" />
+    <meta name="twitter:description" content="颜色反转、图片反转或照片反转，以及生成黑白照片 — 所有操作均在浏览器内完成，无需上传任何文件。" />
+    <meta name="twitter:image" content="../assets/images/og.png" />
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "颜色反转与图片反转在线工具",
+        "alternateName": "免费反转照片与黑白照片转换器",
+        "description": "立即在线免费反转颜色、反转图片或反转照片。支持水平/垂直翻转，以及生成经典黑白照片 — 无需上传任何文件。",
+        "url": "https://invert-image.wwkejishe.top/zh/",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "CNY",
+            "availability": "https://schema.org/InStock"
+        },
+        "featureList": ["颜色反转", "图片反转", "照片反转", "翻转图片", "灰度", "黑白照片"],
+        "image": "../assets/images/og.png"
+        }
+    </script>
+    
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <style>
+        /* Language switcher styles */
+        .language-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        
+        .language-switcher select {
+            padding: 8px 12px;
+            border: 1px solid var(--primary);
+            border-radius: var(--radius);
+            background: var(--card-bg);
+            color: var(--primary);
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .language-switcher {
+                position: static;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+        }
+        
+        /* 教程样式 */
+        .tutorial-steps {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .tutorial-step {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .tutorial-step:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .tutorial-step strong {
+            color: var(--primary-dark);
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .step-description {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .tutorial-image-container {
+            margin: 15px 0;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .tutorial-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            max-height: 300px;
+            object-fit: contain;
+        }
+        
+        @media (max-width: 768px) {
+            .tutorial-image {
+                max-height: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Language switcher -->
+        <div class="language-switcher">
+            <select onchange="switchLanguage(this.value)">
+                <option value="en">English</option>
+                <option value="zh" selected>简体中文</option>
+                <option value="ja">日本語</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+                <option value="de">Deutsch</option>
+                <option value="it">Italiano</option>
+                <option value="ko">한국어</option>
+            </select>
+        </div>
+        
+        <!-- Header with high keyword density -->
+        <header>
+            <div class="logo">
+                <a href="../">颜色反转 & 图片反转</a>
+            </div>
+            
+            <!-- Main title: contains 4 core keywords -->
+            <h1 class="sr-only">
+                免费在线颜色反转 — 免费图片反转与照片反转工具，一键生成黑白照片
+            </h1>
+            
+            <!-- Subtitle: reinforces keywords and value proposition -->
+            <p class="subtitle">
+                立即<strong>颜色反转</strong>、<strong>图片反转</strong>或<strong>照片反转</strong>
+                文件，
+                水平/垂直翻转，以及将任何图片转换为经典<strong>黑白照片</strong>
+                —
+                100% 浏览器内处理，无需上传任何文件。
+            </p>
+        </header>
+        
+        <!-- Info ribbon: repeats keywords + trust badge -->
+        <div class="info-ribbon">
+            <p>
+                🛡️ 100% 安全 — 所有<strong>颜色反转</strong>、<strong>图片反转</strong>、<strong>照片
+                    反转</strong>
+                和<strong>黑白照片</strong>处理均在您的浏览器本地进行。
+            </p>
+        </div>
+        
+        <!-- Maximized keyword density + SEO-friendly copy -->
+        <div class="main-content-wrapper">
+            
+            <!-- Upload card -->
+            <div class="card upload-card">
+                <div class="upload-area" id="uploadArea" aria-label="用于颜色反转和图片反转的上传区域">
+                    <div id="uploadContent">
+                        <div class="upload-icon">
+                            <!-- SVG remains unchanged, maintaining semantics -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                                <path
+                                    d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z" />
+                            </svg>
+                        </div>
+                        <div class="upload-text">拖放文件即可<strong>颜色反转</strong></div>
+                        <p class="upload-hint">或点击选择任何<strong>照片反转</strong>或<strong>黑白照片</strong>文件</p>
+                    </div>
+
+                    <img id="uploadedImagePreview" alt="图片反转前预览">
+                    <button id="clearUploadBtn" class="btn btn-secondary" style="display:none;"
+                        aria-label="清除已上传的图片">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                            fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
+                            <path
+                                d="M12.438 3H11V2.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0-.5.5V3H3.562a.5.5 0 0 0-.496.592L3 4.5l.394 8.767A2 2 0 0 0 5.38 15h5.24a2 2 0 0 0 1.986-1.733L12.606 4.5l-.066-.908a.5.5 0 0 0-.496-.592zM8 4a.5.5 0 0 0-.5.5v5a.5.5 0 0 0 1 0v-5A.5.5 0 0 0 8 4zm-2.5 0a.5.5 0 0 0-.5.5v5a.5.5 0 0 0 1 0v-5a.5.5 0 0 0-.5-.5zm5 0a.5.5 0 0 0-.5.5v5a.5.5 0 0 0 1 0v-5a.5.5 0 0 0-.5-.5z" />
+                        </svg>
+                        清除图片
+                    </button>
+
+                    <input type="file" id="fileInput" accept="image/*" aria-label="选择要颜色反转的文件">
+                </div>
+            </div>
+
+            <!-- Processing options card -->
+            <div id="processingSection" class="card options-card">
+                <h2><strong>颜色反转</strong>、<strong>图片反转</strong>、<strong>照片反转</strong>和<strong>黑白照片</strong>处理选项</h2>
+                <p class="section-description">
+                    混合搭配效果，一键创建令人惊艳的<strong>颜色反转</strong>或经典的<strong>黑白照片</strong>。
+                </p>
+
+                <div class="options-grid">
+                    <!-- Invert Colors -->
+                    <div class="option-card" id="invertOption">
+                        <div class="option-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em"
+                                height="1em" fill="currentColor" viewBox="0 0 16 16">
+                                <path
+                                    d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.995 16 0 12.006 0 7.651 0 4.117 2.295 1.023 5.697.069A.752.752 0 0 1 6 .278M4.858 1.311A7.269 7.269 0 0 0 1.025 7.3c0 4.02 3.279 7.276 7.32 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.22-2.3.648-3.375z" />
+                            </svg>
+                        </div>
+                        <div class="option-title">颜色反转</div>
+                        <p class="option-desc">
+                            立即<strong>颜色反转</strong>您的<strong>图片反转</strong>或<strong>照片反转</strong>，创造戏剧性的负片效果或艺术感。
+                        </p>
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="invertCheck" checked>
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+
+                    <!-- Flip Horizontal -->
+                    <div class="option-card" id="flipHorizontalOption">
+                        <div class="option-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em"
+                                height="1em" fill="currentColor" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 5a.5.5 0 0 0 .5.5h5a.5.5 0 0 0 0-1h-5A.5.5 0 0 0 8 5M3.854 5.146a.5.5 0 1 0-.708.708l.647.646-.647.646a.5.5 0 1 0 .708.708l.646-.647.646.647a.5.5 0 0 0 .708-.708l-.647-.646.647-.646a.5.5 0 0 0-.708-.708l-.646.647zm.792-1.5a.5.5 0 0 1 0 1h-1A1.5 1.5 0 0 0 2 6.5v7a1.5 1.5 0 0 0 1.5 1.5h8a1.5 1.5 0 0 0 1.5-1.5v-4a.5.5 0 0 0-1 0v4a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5z" />
+                            </svg>
+                        </div>
+                        <div class="option-title">水平翻转</div>
+                        <p class="option-desc">将您的<strong>图片反转</strong>左右镜像，创造创意对称性。</p>
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="flipHorizontalCheck">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+
+                    <!-- Flip Vertical -->
+                    <div class="option-card" id="flipVerticalOption">
+                        <div class="option-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em"
+                                height="1em" fill="currentColor" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 1a.5.5 0 0 0-.5.5v12a.5.5 0 0 0 1 0v-12A.5.5 0 0 0 8 1m3.354 8.146a.5.5 0 0 0-.708.708l.647.646-.647.646a.5.5 0 0 0 .708.708l.646-.647.646.647a.5.5 0 0 0 .708-.708l-.647-.646.647-.646a.5.5 0 0 0-.708-.708l-.646.647zM2.5 12a.5.5 0 0 1 0-1h1a.5.5 0 0 1 0 1zm3 0a.5.5 0 0 1 0-1h1a.5.5 0 0 1 0 1zm3 0a.5.5 0 0 1 0-1h1a.5.5 0 0 1 0 1z" />
+                            </svg>
+                        </div>
+                        <div class="option-title">垂直翻转</div>
+                        <p class="option-desc">将您的<strong>照片反转</strong>上下颠倒，获取独特视角。</p>
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="flipVerticalCheck">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+
+                    <!-- Grayscale / Black and White Photos -->
+                    <div class="option-card" id="grayscaleOption">
+                        <div class="option-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em"
+                                height="1em" fill="currentColor" viewBox="0 0 16 16">
+                                <path
+                                    d="M6 4c.456 0 .816.4.722.833C6.445 6.025 6 7.315 6 8.5s.445 2.475.722 3.667A.726.726 0 0 1 6 13a.72.72 0 0 1-.71-.833C5.555 10.975 6 9.685 6 8.5s-.445-2.475-.71-3.667A.72.72 0 0 1 6 4m0-1a1.72 1.72 0 0 0-1.71 1.833c.218 1.02.71 2.509.71 4.167 0 1.658-.492 3.148-.71 4.167A1.72 1.72 0 0 0 6 14a1.72 1.72 0 0 0 1.71-1.833c-.218-1.02-.71-2.509-.71-4.167 0-1.658.492-3.148.71-4.167A1.72 1.72 0 0 0 6 3M10 4c.456 0 .816.4.722.833C10.445 6.025 10 7.315 10 8.5s.445 2.475.722 3.667A.726.726 0 0 1 10 13a.72.72 0 0 1-.71-.833c-.218-1.02-.71-2.509-.71-4.167 0-1.658.492-3.148.71-4.167A.72.72 0 0 1 10 4m0-1a1.72 1.72 0 0 0-1.71 1.833c.218 1.02.71 2.509.71 4.167 0 1.658-.492 3.148-.71 4.167A1.72 1.72 0 0 0 10 14a1.72 1.72 0 0 0 1.71-1.833c-.218-1.02-.71-2.509-.71-4.167 0-1.658.492-3.148.71-4.167A1.72 1.72 0 0 0 10 3" />
+                            </svg>
+                        </div>
+                        <div class="option-title">转换为灰度</div>
+                        <p class="option-desc">
+                            将任何图片转换为拥有丰富色调的经典<strong>黑白照片</strong>。
+                        </p>
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="grayscaleCheck">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="process-section">
+                    <button id="processBtn" class="btn btn-primary" disabled
+                        aria-label="处理颜色反转和图片反转">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                            fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
+                            <path
+                                d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9" />
+                            <path fill-rule="evenodd"
+                                d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z" />
+                        </svg>
+                        处理图片
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="resultSection" class="card section-hidden fade-in">
+            <h2>处理结果</h2>
+            <div class="image-preview-container">
+                <div class="preview-box">
+                    <div class="preview-label">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z" />
+                        </svg>
+                        原始图片
+                    </div>
+                    <div class="preview-area">
+                        <img id="originalImage" alt="原始图片预览">
+                        <span id="originalImagePlaceholder">上传图片后可在此处查看原图。</span>
+                    </div>
+                </div>
+
+                <div class="preview-box">
+                    <div class="preview-label">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M14 4.5V14a2 2 0 0 1-2 2h-2V3.5L14 4.5zM3.5 10.5a.5.5 0 0 1 0-1h9a.5.5 0 0 1 0 1h-9zm0-2a.5.5 0 0 1 0-1h9a.5.5 0 0 1 0 1h-9zm0-2a.5.5 0 0 1 0-1h9a.5.5 0 0 1 0 1h-9z" />
+                        </svg>
+                        处理后图片
+                    </div>
+                    <div class="preview-area">
+                        <canvas id="canvas"></canvas>
+                        <span id="processedImagePlaceholder">处理后的图片将显示在这里。</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button id="downloadBtn" class="btn btn-success">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                        viewBox="0 0 16 16" style="margin-right: 8px;">
+                        <path
+                            d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                        <path
+                            d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
+                    </svg>
+                    下载结果
+                </button>
+                <button id="newFileBtn" class="btn btn-secondary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                        viewBox="0 0 16 16" style="margin-right: 8px;">
+                        <path d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
+                        <path
+                            d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
+                    </svg>
+                    处理另一张图片
+                </button>
+            </div>
+        </div>
+
+        <!-- SEO-Optimized FAQ Section – maximum keyword coverage -->
+        <div class="faq-section">
+            <h2>图片编辑常见问题解答 (FAQ)</h2>
+
+            <!-- 1 -->
+            <div class="faq-item">
+                <h3 class="question">什么是颜色反转、图片反转或在线照片反转？</h3>
+                <p class="answer">
+                    当您<strong>颜色反转</strong>时，<strong>图片反转</strong>或<strong>照片反转</strong>中的每个像素都会在数学上被转换为其互补色的相反值——黑色变为白色，红色变为青色，依此类推。这种"负片"效果通常被称为<em>颜色反转</em>、<em>图片反转</em>或<em>照片反转</em>，具体取决于上下文。
+                </p>
+            </div>
+
+            <!-- 2 -->
+            <div class="faq-item">
+                <h3 class="question">为什么在创意项目中应该颜色反转图片或反转照片？</h3>
+                <p class="answer">
+                    艺术家和设计师<strong>颜色反转</strong>图片是为了打造超现实视觉效果，揭示隐藏细节，或模仿经典胶片负片。无论您是<strong>图片反转</strong>制作海报，还是<strong>照片反转</strong>用于社交媒体，这种戏剧性的转变都能立即增添吸引眼球的对比度。
+                </p>
+            </div>
+
+            <!-- 3 -->
+            <div class="faq-item">
+                <h3 class="question">颜色反转或图片反转会降低照片质量吗？</h3>
+                <p class="answer">
+                    不会。<strong>颜色反转</strong>或<strong>图片反转</strong>的过程是无损的像素值转换；分辨率和清晰度保持不变。因为所有操作都在本地运行，您的原始<strong>照片反转</strong>文件保持完好。
+                </p>
+            </div>
+
+            <!-- 4 -->
+            <div class="faq-item">
+                <h3 class="question">如何使用我们的免费在线工具快速颜色反转、图片反转或反转照片？</h3>
+                <p class="answer">
+                    我们的工具提供了一种快速、无麻烦的方式，只需点击几下即可转换您的图像。最好的部分是，它完全免费且可在任何有互联网连接的设备上访问——无需特殊软件或技术技能。使用方法如下：
+                <ol class="tutorial-steps">
+                    <li class="tutorial-step">
+                        <strong>步骤1：上传您的图像</strong>
+                        <p class="step-description">
+                            在网络浏览器中访问我们的免费颜色反转在线工具。您会看到一个简单的上传区域，您可以拖放图像文件或点击浏览设备中的文件。
+                        </p>
+                        <div class="tutorial-image-container">
+                            <img src="../assets/images/Upload-Your-Image.png" alt="Upload-Your-Image" class="tutorial-image">
+                        </div>
+                    </li>
+                    <li class="tutorial-step">
+                        <strong>步骤2：选择颜色反转选项</strong>
+                        <p class="step-description">
+                            上传图像后，您会看到一个简单的界面。选择"颜色反转"选项以激活颜色反转过程。
+                        </p>
+                        <div class="tutorial-image-container">
+                            <img src="../assets/images/Select-the-Invert-Colors-Option.png" alt="Select-the-Invert-Colors-Option" class="tutorial-image">
+                        </div>
+                    </li>
+                    <li class="tutorial-step">
+                        <strong>步骤3：处理图像</strong>
+                        <p class="step-description">
+                            选择所需选项后，点击"处理图像"按钮。工具将立即处理您的图像并应用选定的效果。
+                        </p>
+                    </li>
+                    <li class="tutorial-step">
+                        <strong>步骤4：下载结果</strong>
+                        <p class="step-description">
+                            处理完成后，您会看到"下载结果"按钮。点击此按钮将编辑后的图像保存到您的设备上。
+                        </p>
+                        <div class="tutorial-image-container">
+                            <img src="../assets/images/Invert-Colors-Result.png" alt="Download-Invert-Colors-Result" class="tutorial-image">
+                        </div>
+                    </li>
+                </ol>
+                </p>
+            </div>
+
+            <!-- 5 -->
+            <div class="faq-item">
+                <h3 class="question">什么是黑白照片，它们与灰度或去饱和图像有何不同？</h3>
+                <p class="answer">
+                    <strong>黑白照片</strong>——技术上称为"灰度"——只包含从纯黑到纯白的色调，去除了所有色相信息。真正的<strong>黑白照片</strong>强调光线、阴影和纹理，而简单的去饱和可能会显得平淡。
+                </p>
+            </div>
+
+            <!-- 6 -->
+            <div class="faq-item">
+                <h3 class="question">为什么要将彩色图片转换为黑白照片用于叙事？</h3>
+                <p class="answer">
+                    转换为<strong>黑白照片</strong>可以消除色彩干扰，引导观众关注情感、形态和叙事。<strong>黑白照片</strong>的永恒感还能为肖像、风景或街景增添怀旧感和艺术深度。
+                </p>
+            </div>
+
+            <!-- 7 -->
+            <div class="faq-item">
+                <h3 class="question">如何使用我们的在线转换器从任何图像创建高质量的黑白照片？</h3>
+                <p class="answer">
+                    上传您的图片，启用"转换为<strong>黑白照片</strong>"，然后点击处理。我们的感知灰度算法将颜色映射到亮度值，在您下载的每张<strong>黑白照片</strong>中提供丰富的色调范围和清晰的细节。
+                </p>
+            </div>
+
+            <!-- 8 -->
+            <div class="faq-item">
+                <h3 class="question">是否可以颜色反转黑白照片，创造独特的负片效果？</h3>
+                <p class="answer">
+                    绝对可以。当您对<strong>黑白照片</strong>进行<strong>颜色反转</strong>时，单色色调会翻转——黑色变为白色，反之亦然——几秒钟内即可重现经典胶片负片的美学效果。
+                </p>
+            </div>
+
+            <!-- 9 -->
+            <div class="faq-item">
+                <h3 class="question">是否可以批量反转图片或反转照片文件？</h3>
+                <p class="answer">
+                    目前，我们的工具一次处理一个文件，以保证本地、零上传的安全性。只需重复步骤，依次<strong>图片反转</strong>或<strong>照片反转</strong>文件即可。
+                </p>
+            </div>
+
+            <!-- 10 -->
+            <div class="faq-item">
+                <h3 class="question">当我颜色反转、图片反转或创建黑白照片时，支持哪些文件类型？</h3>
+                <p class="answer">
+                    您可以从JPG、PNG、WebP、BMP和GIF文件（最大20 MB）中<strong>颜色反转</strong>或转换为<strong>黑白照片</strong>，直接在任何现代浏览器中完成。
+                </p>
+            </div>
+        </div>
+
+        <footer>
+            Copyright 2025 &copy; <a href="../" style="color:#333;">颜色反转 & 图片反转</a>. 保留所有权利。
+        </footer>
+    </div>
+
+    <script src="../assets/js/index.js"></script>
+    <script>
+        // Language switching function
+        function switchLanguage(lang) {
+            const langPaths = {
+                'en': '../',
+                'zh': '../zh/',
+                'ja': '../ja/',
+                'es': '../es/',
+                'fr': '../fr/',
+                'de': '../de/',
+                'it': '../it/',
+                'ko': '../ko/'
+            };
+            
+            if (langPaths[lang]) {
+                window.location.href = langPaths[lang];
+            }
+        }
+    </script>
+</body>
+
+</html>

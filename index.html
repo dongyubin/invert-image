@@ -77,6 +77,20 @@
 
 <body>
     <div class="container">
+        <!-- Language switcher -->
+        <div class="language-switcher">
+            <select onchange="switchLanguage(this.value)">
+                <option value="">English</option>
+                <option value="zh">简体中文</option>
+                <option value="ja">日本語</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+                <option value="de">Deutsch</option>
+                <option value="it">Italiano</option>
+                <option value="ko">한국어</option>
+            </select>
+        </div>
+
         <!-- 关键词高密度 + 语义化 header -->
         <header>
             <div class="logo">
@@ -249,6 +263,8 @@
             </div>
         </div>
 
+        
+
         <div id="resultSection" class="card section-hidden fade-in">
             <h2>Processed Results</h2>
             <div class="image-preview-container">
@@ -303,6 +319,60 @@
                     </svg>
                     Process Another
                 </button>
+            </div>
+        </div>
+
+        <!-- Preview Effects Section -->
+        <div class="card preview-effects-section">
+            <h2>Effect Previews</h2>
+            <p class="section-description">
+                See how different effects transform your images before processing.
+            </p>
+
+            <div class="preview-effects-grid">
+                <!-- Original Image -->
+                <div class="preview-effect-card">
+                    <div class="preview-effect-label">Original</div>
+                    <div class="preview-effect-image">
+                        <img src="assets/images/nano-banana.jpeg" alt="Original image" loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Grayscale -->
+                <div class="preview-effect-card">
+                    <div class="preview-effect-label">Grayscale</div>
+                    <div class="preview-effect-image">
+                        <img src="assets/images/nano-banana-convert-to-grayscale.png" alt="Grayscale effect"
+                            loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Horizontal Flip -->
+                <div class="preview-effect-card">
+                    <div class="preview-effect-label">Horizontal Flip</div>
+                    <div class="preview-effect-image">
+                        <img src="assets/images/nano-banana-filp-horizontally.png" alt="Horizontal flip effect"
+                            loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Invert Colors -->
+                <div class="preview-effect-card">
+                    <div class="preview-effect-label">Invert Colors</div>
+                    <div class="preview-effect-image">
+                        <img src="assets/images/nano-banana-invert-colors.png" alt="Inverted colors effect"
+                            loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Vertical Flip -->
+                <div class="preview-effect-card">
+                    <div class="preview-effect-label">Vertical Flip</div>
+                    <div class="preview-effect-image">
+                        <img src="assets/images/nano-banana-flip-vertically.png" alt="Vertical flip effect"
+                            loading="lazy">
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -420,15 +490,113 @@
                     JPG, PNG, WebP, BMP, and GIF files up to 20 MB, directly in any modern browser.
                 </p>
             </div>
+
+            <div class="faq-item">
+                <h3 class="question">Why Invert Image Colors?</h3>
+                <p class="answer">
+                    Today, color inversion serves practical purposes across various fields and situations. You can
+                    invert image colors if you’re a designer, developer, or just someone who stares at screens all day.
+                    These are compelling reasons to flip your color palette:
+                <ul>
+                    <li>Reduce Eye Strain: Converting images from light to dark through color inversion can dramatically
+                        reduce visual fatigue. When working with presentation slides, documentation, or reference
+                        materials with bright backgrounds, inverting these images transforms them into eye-friendly
+                        versions.
+                        Accessibility Testing: For designers and developers, inverting image colors offers a quick way
+                        to check how your designs might appear to users with certain visual impairments.</li>
+                    <li>Enhance Details: When you’re trying to spot subtle details in photographs or complex images,
+                        inverting colors can reveal elements that might be missed in the original. Photographers and
+                        analysts often use this technique to examine fine details.
+                        Creative Effects: If you want to create unique, eye-catching visuals for social media,
+                        presentations, or art projects, color inversion provides an instant way to transform ordinary
+                        images into striking alternatives.</li>
+                    <li>Improve Readability: Sometimes, text can be difficult to read against certain backgrounds.
+                        Inverting the colors can improve contrast and legibility without requiring changes to font size
+                        or style.</li>
+                    <li>Technical Analysis: Scientists, medical professionals, and researchers often invert colors in
+                        specialized imagery to better identify patterns, structures, or anomalies that might otherwise
+                        be difficult to perceive.</li>
+                    <li>Dark Mode Alternative: You can create your own version of “dark mode” for images when working
+                        with applications or websites that don’t offer this feature natively, giving you more control
+                        over your viewing experience.</li>
+                </ul>
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3 class="question">How to Use Free Invert Colors Online?</h3>
+                <p class="answer">
+                    Our tool offers a quick, hassle-free way to transform your images with just a few clicks. The best
+                    part? It's completely free and accessible on any device with an internet connection – no special
+                    software or technical skills required. Here's how to use it:
+                <ol class="tutorial-steps">
+                    <li class="tutorial-step">
+                        <strong>Step 1: Upload Your Image</strong>
+                        <p class="step-description">
+                            Go to Free Invert Colors Online in your web browser. You'll see a simple upload area where you can either drag and drop your image file or click to browse your device's files.
+                        </p>
+                        <div class="tutorial-image-container">
+                            <img src="./assets/images/Upload-Your-Image.png" alt="Upload-Your-Image" class="tutorial-image">
+                        </div>
+                    </li>
+                    <li class="tutorial-step">
+                        <strong>Step 2: Select the Invert Colors Option</strong>
+                        <p class="step-description">
+                            Once your image is uploaded, you'll notice a simple interface with processing options. Select "Invert Colors" to activate the color inversion process.
+                        </p>
+                        <div class="tutorial-image-container">
+                            <img src="./assets/images/Select-the-Invert-Colors-Option.png" alt="Select-the-Invert-Colors-Option" class="tutorial-image">
+                        </div>
+                    </li>
+                    <li class="tutorial-step">
+                        <strong>Step 3: Process Image</strong>
+                        <p class="step-description">
+                            After selecting your desired options, click the "Process Image" button. The tool will instantly process your image and apply the selected effects.
+                        </p>
+                    </li>
+                    <li class="tutorial-step">
+                        <strong>Step 4: Download Your Results</strong>
+                        <p class="step-description">
+                            Once the processing is complete, you'll see a "Download Result" button. Click this button to save your edited image to your device.
+                        </p>
+                        <div class="tutorial-image-container">
+                            <img src="./assets/images/Invert-Colors-Result.png" alt="Download-Invert-Colors-Result" class="tutorial-image">
+                        </div>
+                    </li>
+                </ol>
+                </p>
+            </div>
         </div>
 
-        <footer>
-            <p>© 2025 Image Processing Tool - Free online editor for designers, photographers and creators</p>
-            <p>All image processing happens in your browser - your files never leave your device</p>
-        </footer>
+    </div>
+
+    <footer>
+        <p>© 2025 Image Processing Tool - Free online editor for designers, photographers and creators</p>
+        <p>All image processing happens in your browser - your files never leave your device</p>
+    </footer>
     </div>
 
     <script src="./assets/js/index.js"></script>
+    <script>
+        // Language switching function
+        function switchLanguage(lang) {
+            if (lang === '') return;
+
+            const langPaths = {
+                'zh': 'zh/',
+                'ja': 'ja/',
+                'es': 'es/',
+                'fr': 'fr/',
+                'de': 'de/',
+                'it': 'it/',
+                'ko': 'ko/'
+            };
+
+            if (langPaths[lang]) {
+                window.location.href = langPaths[lang];
+            }
+        }
+    </script>
 </body>
 
 </html>

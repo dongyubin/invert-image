@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="../assets/images/favicon-57x57.png" type="image/png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="../assets/images/favicon-60x60.png" type="image/png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="../assets/images/favicon-72x72.png" type="image/png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="../assets/images/favicon-114x114.png" type="image/png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="../assets/images/favicon-120x120.png" type="image/png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="../assets/images/favicon-144x144.png" type="image/png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="../assets/images/favicon-152x152.png" type="image/png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicon-180x180.png" type="image/png" />
+    <link rel="icon" sizes="16x16" href="../assets/images/favicon-16x16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="../assets/images/favicon-32x32.png" type="image/png" />
+    <link rel="icon" sizes="96x96" href="../assets/images/favicon-96x96.png" type="image/png" />
+    <link rel="icon" sizes="192x192" href="../assets/images/favicon-192x192.png" type="image/png" />
+    <link rel="icon" sizes="512x512" href="../assets/images/favicon-512x512.png" type="image/png" />
+    <link rel="manifest" href="../assets/images/manifest.json" />
+    <meta name="theme-color" content="#FFFFFF" />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="../assets/images/favicon-512x512.png" />
+    
+    <!-- SEO & OpenGraph -->
+    <title>Herramienta Gratuita para Invertir Colores e Invertir Imágenes | Invertir Fotos y Crear Fotos en Blanco y Negro</title>
+    <meta name="description" content="Invierte colores, invierte imágenes o invierte fotos instantáneamente en línea de forma gratuita. Voltea horizontal/verticalmente y convierte a fotos clásicas en blanco y negro — 100% seguro, sin subidas necesarias." />
+    
+    <!-- Keywords in order of priority -->
+    <meta name="keywords" content="invertir colores, invertir imagen, invertir foto, fotos en blanco y negro, herramienta online, gratis, escala de grises, voltear imagen, imagen espejo, invertir colores online, invertir imagen online" />
+    
+    <!-- OpenGraph / Twitter -->
+    <meta property="og:title" content="Invertir Colores e Invertir Imágenes en Línea – Herramienta Gratuita" />
+    <meta property="og:description" content="Invierte colores, invierte imágenes o invierte fotos y convierte a fotos en blanco y negro — todo en tu navegador sin subidas." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://invert-image.wwkejishe.top/es/" />
+    <meta property="og:image" content="../assets/images/og.png" />
+    <meta property="og:image:alt" content="Vista previa del efecto invertir colores en una foto en blanco y negro" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Invertir Colores e Invertir Imágenes en Línea – Herramienta Gratuita" />
+    <meta name="twitter:description" content="Invierte colores, invierte imágenes o invierte fotos y convierte a fotos en blanco y negro — todo en tu navegador sin subidas." />
+    <meta name="twitter:image" content="../assets/images/og.png" />
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Herramienta para Invertir Colores e Invertir Imágenes en Línea",
+        "alternateName": "Conversor Gratuito para Invertir Fotos y Crear Fotos en Blanco y Negro",
+        "description": "Invierte colores, invierte imágenes o invierte fotos instantáneamente en línea de forma gratuita. Voltea horizontal/verticalmente y crea fotos clásicas en blanco y negro — sin subidas necesarias.",
+        "url": "https://invert-image.wwkejishe.top/es/",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock"
+        },
+        "featureList": ["invertir colores", "invertir imagen", "invertir foto", "voltear imagen", "escala de grises", "fotos en blanco y negro"],
+        "image": "../assets/images/og.png"
+        }
+    </script>
+    
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <style>
+        /* Language switcher styles */
+        .language-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        
+        .language-switcher select {
+            padding: 8px 12px;
+            border: 1px solid var(--primary);
+            border-radius: var(--radius);
+            background: var(--card-bg);
+            color: var(--primary);
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .language-switcher {
+                position: static;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+        }
+        
+        /* Tutorial styles */
+        .tutorial-steps {
+            margin-top: 20px;
+        }
+        
+        .tutorial-step {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .step-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .tutorial-image-container {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .tutorial-image {
+            max-height: 300px;
+            border-radius: var(--radius);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            object-fit: contain;
+            max-width: 100%;
+        }
+        
+        @media (max-width: 768px) {
+            .tutorial-step {
+                padding: 15px;
+            }
+            
+            .tutorial-image {
+                max-height: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Language switcher -->
+        <div class="language-switcher">
+            <select onchange="switchLanguage(this.value)">
+                <option value="en">English</option>
+                <option value="zh">简体中文</option>
+                <option value="ja">日本語</option>
+                <option value="es" selected>Español</option>
+                <option value="fr">Français</option>
+                <option value="de">Deutsch</option>
+                <option value="it">Italiano</option>
+                <option value="ko">한국어</option>
+            </select>
+        </div>
+        
+        <!-- Header with high keyword density -->
+        <header>
+            <div class="logo">
+                <a href="../">Invertir Colores & Invertir Imágenes</a>
+            </div>
+            
+            <!-- Main title: contains 4 core keywords -->
+            <h1 class="sr-only">
+                Invertir Colores en Línea Gratis – Herramienta para Invertir Imágenes y Invertir Fotos para Fotos en Blanco y Negro Instantáneas
+            </h1>
+            
+            <!-- Subtitle: reinforces keywords and value proposition -->
+            <p class="subtitle">
+                Invierte colores, invierte imágenes o invierte fotos
+                instantáneamente,
+                voltea horizontal/verticalmente y convierte cualquier imagen a fotos clásicas en blanco y negro
+                —
+                100% basado en navegador, sin subidas.
+            </p>
+        </header>
+        
+        <!-- Info ribbon: repeats keywords + trust badge -->
+        <div class="info-ribbon">
+            <p>
+                🛡️ 100% Seguro — Todo el procesamiento para invertir colores, invertir imágenes, invertir
+                    fotos
+                y fotos en blanco y negro se realiza localmente en tu navegador.
+            </p>
+        </div>
+        
+        <!-- Maximized keyword density + SEO-friendly copy -->
+        <div class="main-content-wrapper">
+            
+            <!-- Upload card -->
+            <div class="card upload-card">
+                <div class="upload-area" id="uploadArea" aria-label="Área de subida para invertir colores e invertir imágenes">
+                    <div id="uploadContent">
+                        <div class="upload-icon">
+                            <!-- SVG remains unchanged, maintaining semantics -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                                <path
+                                    d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z" />
+                            </svg>
+                        </div>
+                        <div class="upload-text">Arrastra y suelta para invertir colores instantáneamente</div>
+                        <p class="upload-hint">O haz clic para seleccionar cualquier foto a invertir o fotos en blanco y
+                                negro desde tu dispositivo</p>
+                    </div>
+
+                    <img id="uploadedImagePreview" alt="Vista previa antes de invertir imagen">
+                    <button id="clearUploadBtn" class="btn btn-secondary" style="display:none;"
+                        aria-label="Limpiar imagen subida">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                            fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
+                            <path
+                                d="M12.438 3H11V2.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0-.5.5V3H3.562a.5.5 0 0 0-.496.592L3 4.5l.394 8.767A2 2 0 0 0 5.38 15h5.24a2 2 0 0 0 1.986-1.733L12.606 4.5l-.066-.908a.5.5 0 0 0-.496-.592zM8 4a.5.5 0 0 0-.5.5v5a.5.5 0 0 0 1 0v-5A.5.5 0 0 0 8 4zm-2.5 0a.5.5 0 0 0-.5.5v5a.5.5 0 0 0 1 0v-5a.5.5 0 0 0-.5-.5zm5 0a.5.5 0 0 0-.5.5v5a.5.5 0 0 0 1 0v-5a.5.5 0 0 0-.5-.5z" />
+                        </svg>
+                        Limpiar Imagen
+                    </button>
+
+                    <input type="file" id="fileInput" accept="image/*" aria-label="Seleccionar archivo para invertir colores">
+                </div>
+            </div>
+
+            <!-- Processing options card -->
+            <div id="processingSection" class="card options-card">
+                <h2>Opciones de Procesamiento para Invertir Colores, Invertir Imágenes, Invertir
+                        Fotos y Fotos en Blanco y Negro</h2>
+                <p class="section-description">
+                    Combina efectos para crear impresionantes efectos de invertir colores o fotos en blanco y negro atemporales con un solo clic.
+                </p>
+
+                <div class="options-grid">
+                    <!-- Invert Colors -->
+                    <div class="option-card" id="invertOption">
+                        <div class="option-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em"
+                                height="1em" fill="currentColor" viewBox="0 0 16 16">
+                                <path
+                                    d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.995 16 0 12.006 0 7.651 0 4.117 2.295 1.023 5.697.069A.752.752 0 0 1 6 .278M4.858 1.311A7.269 7.269 0 0 0 1.025 7.3c0 4.02 3.279 7.276 7.32 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.22-2.3.648-3.375z" />
+                            </svg>
+                        </div>
+                        <div class="option-title">Invertir Colores</div>
+                        <p class="option-desc">
+                            Invierte colores instantáneamente de tu imagen a invertir o foto a invertir para crear efectos negativos dramáticos o artísticos.
+                        </p>
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="invertCheck" checked>
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+
+                    <!-- Flip Horizontal -->
+                    <div class="option-card" id="flipHorizontalOption">
+                        <div class="option-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em"
+                                height="1em" fill="currentColor" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 5a.5.5 0 0 0 .5.5h5a.5.5 0 0 0 0-1h-5A.5.5 0 0 0 8 5M3.854 5.146a.5.5 0 1 0-.708.708l.647.646-.647.646a.5.5 0 1 0 .708.708l.646-.647.646.647a.5.5 0 0 0 .708-.708l-.647-.646.647-.646a.5.5 0 0 0-.708-.708l-.646.647zm.792-1.5a.5.5 0 0 1 0 1h-1A1.5 1.5 0 0 0 2 6.5v7a1.5 1.5 0 0 0 1.5 1.5h8a1.5 1.5 0 0 0 1.5-1.5v-4a.5.5 0 0 0-1 0v4a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5z" />
+                            </svg>
+                        </div>
+                        <div class="option-title">Voltear Horizontalmente</div>
+                        <p class="option-desc">Espejea tu imagen a invertir de izquierda a derecha para simetría creativa.</p>
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="flipHorizontalCheck">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+
+                    <!-- Flip Vertical -->
+                    <div class="option-card" id="flipVerticalOption">
+                        <div class="option-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em"
+                                height="1em" fill="currentColor" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 1a.5.5 0 0 0-.5.5v12a.5.5 0 0 0 1 0v-12A.5.5 0 0 0 8 1m3.354 8.146a.5.5 0 0 0-.708.708l.647.646-.647.646a.5.5 0 0 0 .708.708l.646-.647.646.647a.5.5 0 0 0 .708-.708l-.647-.646.647-.646a.5.5 0 0 0-.708-.708l-.646.647zM2.5 12a.5.5 0 0 1 0-1h1a.5.5 0 0 1 0 1zm3 0a.5.5 0 0 1 0-1h1a.5.5 0 0 1 0 1zm3 0a.5.5 0 0 1 0-1h1a.5.5 0 0 1 0 1z" />
+                            </svg>
+                        </div>
+                        <div class="option-title">Voltear Verticalmente</div>
+                        <p class="option-desc">Voltea tu foto a invertir boca abajo para perspectivas únicas.</p>
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="flipVerticalCheck">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+
+                    <!-- Grayscale / Black and White Photos -->
+                    <div class="option-card" id="grayscaleOption">
+                        <div class="option-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em"
+                                height="1em" fill="currentColor" viewBox="0 0 16 16">
+                                <path
+                                    d="M6 4c.456 0 .816.4.722.833C6.445 6.025 6 7.315 6 8.5s.445 2.475.722 3.667A.726.726 0 0 1 6 13a.72.72 0 0 1-.71-.833C5.555 10.975 6 9.685 6 8.5s-.445-2.475-.71-3.667A.72.72 0 0 1 6 4m0-1a1.72 1.72 0 0 0-1.71 1.833c.218 1.02.71 2.509.71 4.167 0 1.658-.492 3.148-.71 4.167A1.72 1.72 0 0 0 6 14a1.72 1.72 0 0 0 1.71-1.833c-.218-1.02-.71-2.509-.71-4.167 0-1.658.492-3.148.71-4.167A1.72 1.72 0 0 0 6 3M10 4c.456 0 .816.4.722.833C10.445 6.025 10 7.315 10 8.5s.445 2.475.722 3.667A.726.726 0 0 1 10 13a.72.72 0 0 1-.71-.833c-.218-1.02-.71-2.509-.71-4.167 0-1.658.492-3.148.71-4.167A.72.72 0 0 1 10 4m0-1a1.72 1.72 0 0 0-1.71 1.833c.218 1.02.71 2.509.71 4.167 0 1.658-.492 3.148-.71 4.167A1.72 1.72 0 0 0 10 14a1.72 1.72 0 0 0 1.71-1.833c-.218-1.02-.71-2.509-.71-4.167 0-1.658.492-3.148.71-4.167A1.72 1.72 0 0 0 10 3" />
+                            </svg>
+                        </div>
+                        <div class="option-title">Convertir a Escala de Grises</div>
+                        <p class="option-desc">
+                            Transforma cualquier imagen en fotos en blanco y negro clásicas con rico profundo tonal.
+                        </p>
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="grayscaleCheck">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="process-section">
+                    <button id="processBtn" class="btn btn-primary" disabled
+                        aria-label="Procesar invertir colores e invertir imagen">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                            fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
+                            <path
+                                d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9" />
+                            <path fill-rule="evenodd"
+                                d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z" />
+                        </svg>
+                        Procesar Imagen
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="resultSection" class="card section-hidden fade-in">
+            <h2>Resultados Procesados</h2>
+            <div class="image-preview-container">
+                <div class="preview-box">
+                    <div class="preview-label">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z" />
+                        </svg>
+                        Imagen Original
+                    </div>
+                    <div class="preview-area">
+                        <img id="originalImage" alt="Vista Previa de la Imagen Original">
+                        <span id="originalImagePlaceholder">Sube una imagen para ver el original aquí.</span>
+                    </div>
+                </div>
+
+                <div class="preview-box">
+                    <div class="preview-label">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M14 4.5V14a2 2 0 0 1-2 2h-2V3.5L14 4.5zM3.5 10.5a.5.5 0 0 1 0-1h9a.5.5 0 0 1 0 1h-9zm0-2a.5.5 0 0 1 0-1h9a.5.5 0 0 1 0 1h-9zm0-2a.5.5 0 0 1 0-1h9a.5.5 0 0 1 0 1h-9z" />
+                        </svg>
+                        Imagen Procesada
+                    </div>
+                    <div class="preview-area">
+                        <canvas id="canvas"></canvas>
+                        <span id="processedImagePlaceholder">La imagen procesada aparecerá aquí.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button id="downloadBtn" class="btn btn-success">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                        viewBox="0 0 16 16" style="margin-right: 8px;">
+                        <path
+                            d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                        <path
+                            d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
+                    </svg>
+                    Descargar Resultado
+                </button>
+                <button id="newFileBtn" class="btn btn-secondary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                        viewBox="0 0 16 16" style="margin-right: 8px;">
+                        <path d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
+                        <path
+                            d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
+                    </svg>
+                    Procesar Otra
+                </button>
+            </div>
+        </div>
+
+        <!-- SEO-Optimized FAQ Section – maximum keyword coverage -->
+        <div class="faq-section">
+            <h2>Preguntas Frecuentes (FAQ) sobre Edición de Imágenes</h2>
+
+            <!-- 1 -->
+            <div class="faq-item">
+                <h3 class="question">¿Qué significa invertir colores, invertir imagen o invertir foto en línea?</h3>
+                <p class="answer">
+                    Cuando inviertes colores, cada píxel en una imagen a invertir o foto a invertir se invierte matemáticamente a su opuesto complementario — el negro se convierte en blanco, el rojo en cian, etc. Este efecto "negativo" a menudo se llama invertir colores, invertir imagen o invertir foto según el contexto.
+                </p>
+            </div>
+
+            <!-- 2 -->
+            <div class="faq-item">
+                <h3 class="question">¿Por qué debo invertir colores de una imagen o invertir una foto para proyectos creativos?</h3>
+                <p class="answer">
+                    Artistas y diseñadores invierten colores para crear visuales surrealistas, revelar detalles ocultos o emular negativos de película clásicos. Ya sea que inviertas colores de activos para carteles o inviertas fotos para redes sociales, el cambio dramático agrega contraste atractivo al instante.
+                </p>
+            </div>
+
+            <!-- 3 -->
+            <div class="faq-item">
+                <h3 class="question">¿Invertir colores o invertir una imagen reduce la calidad de la foto?</h3>
+                <p class="answer">
+                    No. El proceso para invertir colores o invertir imagen es una transformación de valores de píxeles sin pérdida; la resolución y nitidez se mantienen intactas. Debido a que todo se ejecuta localmente, tu foto original para invertir permanece intacta.
+                </p>
+            </div>
+
+            <!-- 4 -->
+            <div class="faq-item">
+                <h3 class="question">¿Cómo puedo invertir colores, invertir imagen o invertir foto rápidamente usando tu herramienta gratuita en línea?</h3>
+                <p class="answer">
+                    <div class="tutorial-steps">
+                        <div class="tutorial-step">
+                            <h4 class="step-title">Paso 1: Cargar tu imagen</h4>
+                            <p>Arrastra y suelta o haz clic para seleccionar una foto desde tu dispositivo.</p>
+                            <div class="tutorial-image-container">
+                                <img src="../assets/images/Upload-Your-Image.png" alt="Cómo cargar una imagen" class="tutorial-image">
+                            </div>
+                        </div>
+                        
+                        <div class="tutorial-step">
+                            <h4 class="step-title">Paso 2: Seleccionar la opción de invertir colores</h4>
+                            <p>Activa el interruptor "<strong>invertir colores</strong>". También puedes agregar otros efectos según sea necesario.</p>
+                            <div class="tutorial-image-container">
+                                <img src="../assets/images/Select-the-Invert-Colors-Option.png" alt="Seleccionar la opción de invertir colores" class="tutorial-image">
+                            </div>
+                        </div>
+                        
+                        <div class="tutorial-step">
+                            <h4 class="step-title">Paso 3: Verificar el efecto</h4>
+                            <p>Observa cómo aparece tu <strong>imagen a invertir</strong> instantáneamente. Realiza ajustes si es necesario.</p>
+                        </div>
+                        
+                        <div class="tutorial-step">
+                            <h4 class="step-title">Paso 4: Descargar el resultado</h4>
+                            <p>Descarga la <strong>foto a invertir</strong> terminada — todo el procesamiento se realiza en tu navegador, por lo que tus datos nunca dejan tu dispositivo.</p>
+                            <div class="tutorial-image-container">
+                                <img src="../assets/images/Invert-Colors-Result.png" alt="Resultado de invertir colores" class="tutorial-image">
+                            </div>
+                        </div>
+                    </div>
+                </p>
+            </div>
+
+            <!-- 5 -->
+            <div class="faq-item">
+                <h3 class="question">¿Qué son las fotos en blanco y negro, y cómo se diferencian de las imágenes en escala de grises o desaturadas?</h3>
+                <p class="answer">
+                    Las fotos en blanco y negro — técnicamente "escala de grises" — contienen solo tonos desde el negro puro hasta el blanco puro, eliminando toda la información de tono. Las verdaderas fotos en blanco y negro enfatizan la luz, la sombra y la textura, mientras que una simple desaturación puede parecer plana.
+                </p>
+            </div>
+
+            <!-- 6 -->
+            <div class="faq-item">
+                <h3 class="question">¿Por qué convertir imágenes en color a fotos en blanco y negro para contar historias?</h3>
+                <p class="answer">
+                    Convertir a fotos en blanco y negro elimina las distracciones de color, guiando a los espectadores hacia la emoción, la forma y la narrativa. El aspecto atemporal de las fotos en blanco y negro también agrega nostalgia y profundidad artística a retratos, paisajes o escenas callejeras.
+                </p>
+            </div>
+
+            <!-- 7 -->
+            <div class="faq-item">
+                <h3 class="question">¿Cómo creo fotos en blanco y negro de alta calidad desde cualquier imagen con tu conversor en línea?</h3>
+                <p class="answer">
+                    Carga tu imagen, activa "Convertir a fotos en blanco y negro" y haz clic en procesar. Nuestro algoritmo de escala de grises perceptual mapea los colores a valores de luminancia, proporcionando rango tonal rico y detalles nítidos en cada foto en blanco y negro que descargues.
+                </p>
+            </div>
+
+            <!-- 8 -->
+            <div class="faq-item">
+                <h3 class="question">¿Puedo invertir colores de fotos en blanco y negro para un aspecto único de película negativa?</h3>
+                <p class="answer">
+                    Absolutamente. Cuando inviertes colores en fotos en blanco y negro, los tonos monocromáticos se invierten — el negro se convierte en blanco y viceversa — recreando la estética clásica de la película negativa en segundos.
+                </p>
+            </div>
+
+            <!-- 9 -->
+            <div class="faq-item">
+                <h3 class="question">¿Es posible invertir imágenes o invertir archivos de fotos en lote todos a la vez?</h3>
+                <p class="answer">
+                    Actualmente, nuestra herramienta procesa un archivo a la vez para garantizar seguridad local sin subidas. Simplemente repite los pasos para invertir imágenes o invertir archivos de fotos en secuencia.
+                </p>
+            </div>
+
+            <!-- 10 -->
+            <div class="faq-item">
+                <h3 class="question">¿Qué tipos de archivos se admiten al invertir colores, invertir imágenes o crear fotos en blanco y negro?</h3>
+                <p class="answer">
+                    Puedes invertir colores o convertir a fotos en blanco y negro desde archivos JPG, PNG, WebP, BMP y GIF de hasta 20 MB, directamente en cualquier navegador moderno.
+                </p>
+            </div>
+        </div>
+
+        <footer>
+            Copyright 2025 &copy; <a href="../" style="color:#333;">Invertir Colores & Invertir Imágenes</a>. Todos los derechos reservados.
+        </footer>
+    </div>
+
+    <script src="../assets/js/index.js"></script>
+    <script>
+        // Language switching function
+        function switchLanguage(lang) {
+            const langPaths = {
+                'en': '../',
+                'zh': '../zh/',
+                'ja': '../ja/',
+                'es': '../es/',
+                'fr': '../fr/',
+                'de': '../de/',
+                'it': '../it/',
+                'ko': '../ko/'
+            };
+            
+            if (langPaths[lang]) {
+                window.location.href = langPaths[lang];
+            }
+        }
+    </script>
+</body>
+
+</html>

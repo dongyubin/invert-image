@@ -4,5 +4,6 @@ Allow: /
 Disallow: /*.json
 Disallow: /*?*preview=
 Disallow: /*?*action=
+Disallow: /assets/
 Host: https://invert-image.wwkejishe.top
 Sitemap: https://invert-image.wwkejishe.top/sitemap.xml

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="../assets/images/favicon-57x57.png" type="image/png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="../assets/images/favicon-60x60.png" type="image/png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="../assets/images/favicon-72x72.png" type="image/png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="../assets/images/favicon-114x114.png" type="image/png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="../assets/images/favicon-120x120.png" type="image/png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="../assets/images/favicon-144x144.png" type="image/png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="../assets/images/favicon-152x152.png" type="image/png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicon-180x180.png" type="image/png" />
+    <link rel="icon" sizes="16x16" href="../assets/images/favicon-16x16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="../assets/images/favicon-32x32.png" type="image/png" />
+    <link rel="icon" sizes="96x96" href="../assets/images/favicon-96x96.png" type="image/png" />
+    <link rel="icon" sizes="192x192" href="../assets/images/favicon-192x192.png" type="image/png" />
+    <link rel="icon" sizes="512x512" href="../assets/images/favicon-512x512.png" type="image/png" />
+    <link rel="manifest" href="../assets/images/manifest.json" />
+    <meta name="theme-color" content="#FFFFFF" />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="../assets/images/favicon-512x512.png" />
+    
+    <!-- SEO & OpenGraph -->
+    <title>Kostenloses Tool zum Invertieren von Farben und Bildern | Fotos Invertieren und Schwarzweißfotos Erstellen</title>
+    <meta name="description" content="Invertiere Farben, invertiere Bilder oder invertiere Fotos sofort online kostenlos. Spiegele horizontal/vertikal und konvertiere in klassische Schwarzweißfotos — 100% sicher, keine Uploads nötig." />
+    
+    <!-- Keywords in order of priority -->
+    <meta name="keywords" content="farben invertieren, bild invertieren, foto invertieren, schwarzweißfotos, online-tool, kostenlos, graustufen, bild spiegeln, spiegelbild, farben online invertieren, bild online invertieren" />
+    
+    <!-- OpenGraph / Twitter -->
+    <meta property="og:title" content="Farben und Bilder Online Invertieren – Kostenloses Tool" />
+    <meta property="og:description" content="Invertiere Farben, invertiere Bilder oder invertiere Fotos und konvertiere in Schwarzweißfotos — alles in deinem Browser ohne Uploads." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://invert-image.wwkejishe.top/de/" />
+    <meta property="og:image" content="../assets/images/og.png" />
+    <meta property="og:image:alt" content="Vorschau des Effekts Farben invertieren auf einem Schwarzweißfoto" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Farben und Bilder Online Invertieren – Kostenloses Tool" />
+    <meta name="twitter:description" content="Invertiere Farben, invertiere Bilder oder invertiere Fotos und konvertiere in Schwarzweißfotos — alles in deinem Browser ohne Uploads." />
+    <meta name="twitter:image" content="../assets/images/og.png" />
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Tool zum Invertieren von Farben und Bildern Online",
+        "alternateName": "Kostenloser Konverter zum Invertieren von Fotos und Erstellen von Schwarzweißfotos",
+        "description": "Invertiere Farben, invertiere Bilder oder invertiere Fotos sofort online kostenlos. Spiegele horizontal/vertikal und erstelle klassische Schwarzweißfotos — keine Uploads nötig.",
+        "url": "https://invert-image.wwkejishe.top/de/",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock"
+        },
+        "featureList": ["farben invertieren", "bild invertieren", "foto invertieren", "bild spiegeln", "graustufen", "schwarzweißfotos"],
+        "image": "../assets/images/og.png"
+        }
+    </script>
+    
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <style>
+            /* Language switcher styles */
+            .language-switcher {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                z-index: 1000;
+            }
+            
+            .language-select {
+                padding: 8px 12px;
+                border-radius: 4px;
+                border: 1px solid #ddd;
+                background-color: white;
+                font-size: 14px;
+                cursor: pointer;
+            }
+            
+            /* Tutorial styles */
+            .tutorial-steps {
+                counter-reset: tutorial-counter;
+                padding-left: 0;
+            }
+            
+            .tutorial-step {
+                position: relative;
+                list-style-type: none;
+                padding-left: 40px;
+                margin-bottom: 24px;
+                line-height: 1.6;
+            }
+            
+            .tutorial-step::before {
+                counter-increment: tutorial-counter;
+                content: counter(tutorial-counter);
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 28px;
+                height: 28px;
+                background-color: #4A7CFF;
+                color: white;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: bold;
+                font-size: 14px;
+            }
+            
+            .tutorial-image-container {
+                margin: 20px 0;
+                display: flex;
+                justify-content: center;
+            }
+            
+            .tutorial-image {
+                max-width: 100%;
+                height: auto;
+                border-radius: 8px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                border: 1px solid #eee;
+            }
+        </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Language switcher -->
+        <div class="language-switcher">
+            <select onchange="switchLanguage(this.value)">
+                <option value="en">English</option>
+                <option value="zh">简体中文</option>
+                <option value="ja">日本語</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+                <option value="de" selected>Deutsch</option>
+                <option value="it">Italiano</option>
+                <option value="ko">한국어</option>
+            </select>
+        </div>
+        
+        <!-- Header with high keyword density -->
+        <header>
+            <div class="logo">
+                <a href="../">Farben Invertieren & Bilder Invertieren</a>
+            </div>
+            
+            <!-- Main title: contains 4 core keywords -->
+            <h1 class="sr-only">
+                Farben Online Kostenlos Invertieren – Tool zum Invertieren von Bildern und Fotos für Sofortige Schwarzweißfotos
+            </h1>
+            
+            <!-- Subtitle: reinforces keywords and value proposition -->
+            <p class="subtitle">
+                Invertiere Farben, invertiere Bilder oder invertiere Fotos
+                sofort,
+                spiegele horizontal/vertikal und konvertiere jedes Bild in klassische Schwarzweißfotos
+                —
+                100% browserbasiert, keine Uploads.
+            </p>
+        </header>
+        
+        <!-- Info ribbon: repeats keywords + trust badge -->
+        <div class="info-ribbon">
+            <p>
+                🛡️ 100% Sicher — Alle Verarbeitungsschritte zum Invertieren von Farben, Invertieren von Bildern, Invertieren
+                    von Fotos
+                und Schwarzweißfotos werden lokal in deinem Browser durchgeführt.
+            </p>
+        </div>
+        
+        <!-- Maximized keyword density + SEO-friendly copy -->
+        <div class="main-content-wrapper">
+            
+            <!-- Upload card -->
+            <div class="card upload-card">
+                <div class="upload-area" id="uploadArea" aria-label="Uploadbereich zum Invertieren von Farben und Bildern">
+                    <div id="uploadContent">
+                        <div class="upload-icon">
+                            <!-- SVG remains unchanged, maintaining semantics -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                                <path
+                                    d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z" />
+                            </svg>
+                        </div>
+                        <div class="upload-text">Ziehen und Ablegen zum sofortigen Invertieren von Farben</div>
+                        <p class="upload-hint">Oder klicken Sie, um ein Foto zum Invertieren oder Schwarzweißfotos von Ihrem Gerät auszuwählen</p>
+                    </div>
+
+                    <img id="uploadedImagePreview" alt="Vorschau vor dem Invertieren des Bildes">
+                    <button id="clearUploadBtn" class="btn btn-secondary" style="display:none;"
+                        aria-label="Hochgeladenes Bild löschen">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                            fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
+                            <path
+                                d="M12.438 3H11V2.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0-.5.5V3H3.562a.5.5 0 0 0-.496.592L3 4.5l.394 8.767A2 2 0 0 0 5.38 15h5.24a2 2 0 0 0 1.986-1.733L12.606 4.5l-.066-.908a.5.5 0 0 0-.496-.592zM8 4a.5.5 0 0 0-.5.5v5a.5.5 0 0 0 1 0v-5A.5.5 0 0 0 8 4zm-2.5 0a.5.5 0 0 0-.5.5v5a.5.5 0 0 0 1 0v-5a.5.5 0 0 0-.5-.5zm5 0a.5.5 0 0 0-.5.5v5a.5.5 0 0 0 1 0v-5a.5.5 0 0 0-.5-.5z" />
+                        </svg>
+                        Bild Löschen
+                    </button>
+
+                    <input type="file" id="fileInput" accept="image/*" aria-label="Datei zum Invertieren von Farben auswählen">
+                </div>
+            </div>
+
+            <!-- Processing options card -->
+            <div id="processingSection" class="card options-card">
+                <h2>Verarbeitungsoptionen zum Invertieren von Farben, Invertieren von Bildern, Invertieren
+                        von Fotos und Schwarzweißfotos</h2>
+                <p class="section-description">
+                    Kombinieren Sie Effekte, um beeindruckende Farbinversionen oder zeitlose Schwarzweißfotos mit einem einzigen Klick zu erstellen.
+                </p>
+
+                <div class="options-grid">
+                    <!-- Invert Colors -->
+                    <div class="option-card" id="invertOption">
+                        <div class="option-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em"
+                                height="1em" fill="currentColor" viewBox="0 0 16 16">
+                                <path
+                                    d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.995 16 0 12.006 0 7.651 0 4.117 2.295 1.023 5.697.069A.752.752 0 0 1 6 .278M4.858 1.311A7.269 7.269 0 0 0 1.025 7.3c0 4.02 3.279 7.276 7.32 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.22-2.3.648-3.375z" />
+                            </svg>
+                        </div>
+                        <div class="option-title">Farben Invertieren</div>
+                        <p class="option-desc">
+                            Invertiere die Farben deines zu invertierenden Bildes oder Fotos sofort, um dramatische oder künstlerische Negativeffekte zu erzeugen.
+                        </p>
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="invertCheck" checked>
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+
+                    <!-- Flip Horizontal -->
+                    <div class="option-card" id="flipHorizontalOption">
+                        <div class="option-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em"
+                                height="1em" fill="currentColor" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 5a.5.5 0 0 0 .5.5h5a.5.5 0 0 0 0-1h-5A.5.5 0 0 0 8 5M3.854 5.146a.5.5 0 1 0-.708.708l.647.646-.647.646a.5.5 0 1 0 .708.708l.646-.647.646.647a.5.5 0 0 0 .708-.708l-.647-.646.647-.646a.5.5 0 0 0-.708-.708l-.646.647zm.792-1.5a.5.5 0 0 1 0 1h-1A1.5 1.5 0 0 0 2 6.5v7a1.5 1.5 0 0 0 1.5 1.5h8a1.5 1.5 0 0 0 1.5-1.5v-4a.5.5 0 0 0-1 0v4a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5z" />
+                            </svg>
+                        </div>
+                        <div class="option-title">Horizontal Spiegeln</div>
+                        <p class="option-desc">Spiegle dein zu invertierendes Bild von links nach rechts für kreative Symmetrie.</p>
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="flipHorizontalCheck">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+
+                    <!-- Flip Vertical -->
+                    <div class="option-card" id="flipVerticalOption">
+                        <div class="option-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em"
+                                height="1em" fill="currentColor" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 1a.5.5 0 0 0-.5.5v12a.5.5 0 0 0 1 0v-12A.5.5 0 0 0 8 1m3.354 8.146a.5.5 0 0 0-.708.708l.647.646-.647.646a.5.5 0 0 0 .708.708l.646-.647.646.647a.5.5 0 0 0 .708-.708l-.647-.646.647-.646a.5.5 0 0 0-.708-.708l-.646.647zM2.5 12a.5.5 0 0 1 0-1h1a.5.5 0 0 1 0 1zm3 0a.5.5 0 0 1 0-1h1a.5.5 0 0 1 0 1zm3 0a.5.5 0 0 1 0-1h1a.5.5 0 0 1 0 1z" />
+                            </svg>
+                        </div>
+                        <div class="option-title">Vertikal Spiegeln</div>
+                        <p class="option-desc">Drehe dein zu invertierendes Foto kopfüber für einzigartige Perspektiven.</p>
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="flipVerticalCheck">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+
+                    <!-- Grayscale / Black and White Photos -->
+                    <div class="option-card" id="grayscaleOption">
+                        <div class="option-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em"
+                                height="1em" fill="currentColor" viewBox="0 0 16 16">
+                                <path
+                                    d="M6 4c.456 0 .816.4.722.833C6.445 6.025 6 7.315 6 8.5s.445 2.475.722 3.667A.726.726 0 0 1 6 13a.72.72 0 0 1-.71-.833C5.555 10.975 6 9.685 6 8.5s-.445-2.475-.71-3.667A.72.72 0 0 1 6 4m0-1a1.72 1.72 0 0 0-1.71 1.833c.218 1.02.71 2.509.71 4.167 0 1.658-.492 3.148-.71 4.167A1.72 1.72 0 0 0 6 14a1.72 1.72 0 0 0 1.71-1.833c-.218-1.02-.71-2.509-.71-4.167 0-1.658.492-3.148.71-4.167A1.72 1.72 0 0 0 6 3M10 4c.456 0 .816.4.722.833C10.445 6.025 10 7.315 10 8.5s.445 2.475.722 3.667A.726.726 0 0 1 10 13a.72.72 0 0 1-.71-.833c-.218-1.02-.71-2.509-.71-4.167 0-1.658.492-3.148.71-4.167A.72.72 0 0 1 10 4m0-1a1.72 1.72 0 0 0-1.71 1.833c.218 1.02.71 2.509.71 4.167 0 1.658-.492 3.148-.71 4.167A1.72 1.72 0 0 0 10 14a1.72 1.72 0 0 0 1.71-1.833c-.218-1.02-.71-2.509-.71-4.167 0-1.658.492-3.148.71-4.167A1.72 1.72 0 0 0 10 3" />
+                            </svg>
+                        </div>
+                        <div class="option-title">In Graustufen Konvertieren</div>
+                        <p class="option-desc">
+                            Transformiere jedes Bild in klassische Schwarzweißfotos mit reicher Farbtiefe.
+                        </p>
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="grayscaleCheck">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="process-section">
+                    <button id="processBtn" class="btn btn-primary" disabled
+                        aria-label="Farbinversion und Bildinversion verarbeiten">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                            fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
+                            <path
+                                d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9" />
+                            <path fill-rule="evenodd"
+                                d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z" />
+                        </svg>
+                        Bild Verarbeiten
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="resultSection" class="card section-hidden fade-in">
+            <h2>Verarbeitete Ergebnisse</h2>
+            <div class="image-preview-container">
+                <div class="preview-box">
+                    <div class="preview-label">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z" />
+                        </svg>
+                        Originalbild
+                    </div>
+                    <div class="preview-area">
+                        <img id="originalImage" alt="Vorschau des Originalbildes">
+                        <span id="originalImagePlaceholder">Lade ein Bild hoch, um das Original hier zu sehen.</span>
+                    </div>
+                </div>
+
+                <div class="preview-box">
+                    <div class="preview-label">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M14 4.5V14a2 2 0 0 1-2 2h-2V3.5L14 4.5zM3.5 10.5a.5.5 0 0 1 0-1h9a.5.5 0 0 1 0 1h-9zm0-2a.5.5 0 0 1 0-1h9a.5.5 0 0 1 0 1h-9zm0-2a.5.5 0 0 1 0-1h9a.5.5 0 0 1 0 1h-9z" />
+                        </svg>
+                        Verarbeitetes Bild
+                    </div>
+                    <div class="preview-area">
+                        <canvas id="canvas"></canvas>
+                        <span id="processedImagePlaceholder">Das verarbeitete Bild wird hier angezeigt.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button id="downloadBtn" class="btn btn-success">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                        viewBox="0 0 16 16" style="margin-right: 8px;">
+                        <path
+                            d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                        <path
+                            d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
+                    </svg>
+                    Ergebnis Herunterladen
+                </button>
+                <button id="newFileBtn" class="btn btn-secondary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                        viewBox="0 0 16 16" style="margin-right: 8px;">
+                        <path d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
+                        <path
+                            d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
+                    </svg>
+                    Neues Bild Verarbeiten
+                </button>
+            </div>
+        </div>
+
+        <!-- SEO-Optimized FAQ Section – maximum keyword coverage -->
+        <div class="faq-section">
+            <h2>Häufig gestellte Fragen (FAQ) zur Bildbearbeitung</h2>
+
+            <!-- 1 -->
+            <div class="faq-item">
+                <h3 class="question">Was bedeutet es, Farben zu invertieren, ein Bild zu invertieren oder ein Foto online zu invertieren?</h3>
+                <p class="answer">
+                    Wenn du Farben invertierst, wird jeder Pixel in einem zu invertierenden Bild oder zu invertierenden Foto mathematisch zu seinem gegenteiligen Komplement umgekehrt — Schwarz wird zu Weiß, Rot zu Cyan, etc. Dieser "Negativeffekt" wird je nach Kontext häufig Farbinversion, Bildinversion oder Fotoinversion genannt.
+                </p>
+            </div>
+
+            <!-- 2 -->
+            <div class="faq-item">
+                <h3 class="question">Warum sollte ich die Farben eines Bildes invertieren oder ein Foto für kreative Projekte invertieren?</h3>
+                <p class="answer">
+                    Künstler und Designer invertieren Farben, um surrealistische Visuals zu erstellen, verborgene Details zu enthüllen oder klassische Filmnegative zu emulieren. Ob du die Farben von Elementen für Plakate invertierst oder Fotos für soziale Medien invertierst, die dramatische Veränderung fügt sofort einen ansprechenden Kontrast hinzu.
+                </p>
+            </div>
+
+            <!-- 3 -->
+            <div class="faq-item">
+                <h3 class="question">Reduziert die Farbinversion oder die Bildinversion die Qualität des Fotos?</h3>
+                <p class="answer">
+                    Nein. Der Prozess zum Invertieren von Farben oder Invertieren von Bildern ist eine verlustfreie Transformation der Pixelwerte; Auflösung und Schärfe bleiben erhalten. Da alles lokal abläuft, bleibt dein Originalfoto zum Invertieren unversehrt.
+                </p>
+            </div>
+
+            <!-- 4 -->
+            <div class="faq-item">
+                <h3 class="question">Wie kann ich Farben schnell invertieren, Bilder invertieren oder Fotos invertieren, indem ich dein kostenloses Online-Tool benutze?</h3>
+                <div class="answer">
+                    <ol class="tutorial-steps">
+                        <li class="tutorial-step">Ziehen und legen Sie eine beliebige Datei ab oder klicken Sie, um sie hochzuladen.</li>
+                        <li class="tutorial-step">Aktivieren Sie den Schalter "Farben invertieren".</li>
+                        <li class="tutorial-step">Beobachten Sie, wie sich Ihr zu invertierendes Bild sofort anzeigt.</li>
+                        <li class="tutorial-step">Laden Sie das fertig invertierte Foto herunter — Alle Verarbeitungsschritte werden in Ihrem Browser durchgeführt, sodass Ihre Daten niemals Ihr Gerät verlassen.</li>
+                    </ol>
+                    
+                    <div class="tutorial-image-container">
+                        <img src="../assets/images/tutorial.jpg" alt="Tutorial image showing color inversion process" class="tutorial-image">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5 -->
+            <div class="faq-item">
+                <h3 class="question">Was sind Schwarzweißfotos, und wie unterscheiden sie sich von Graustufen- oder desaturierten Bildern?</h3>
+                <p class="answer">
+                    Schwarzweißfotos — technisch "Graustufen" — enthalten nur Töne vom reinen Schwarz bis zum reinen Weiß und eliminieren alle Farbinformation. Wahre Schwarzweißfotos betonen Licht, Schatten und Textur, während eine einfache Desättigung flach erscheinen kann.
+                </p>
+            </div>
+
+            <!-- 6 -->
+            <div class="faq-item">
+                <h3 class="question">Warum sollten Farbbilder in Schwarzweißfotos konvertiert werden, um Geschichten zu erzählen?</h3>
+                <p class="answer">
+                    Die Konvertierung in Schwarzweißfotos eliminiert Farbverzerrungen und leitet die Betrachter zu Emotionen, Formen und Narrationen. Das zeitlose Erscheinungsbild von Schwarzweißfotos fügt auch Nostalgie und künstlerische Tiefe zu Porträts, Landschaften oder Straßenszenen hinzu.
+                </p>
+            </div>
+
+            <!-- 7 -->
+            <div class="faq-item">
+                <h3 class="question">Wie erstelle ich hochwertige Schwarzweißfotos aus beliebigen Bildern mit Ihrem Online-Konverter?</h3>
+                <p class="answer">
+                    Laden Sie Ihr Bild hoch, aktivieren Sie "In Schwarzweißfotos konvertieren" und klicken Sie auf verarbeiten. Unser perceptuelles Graustufen-Algorithmus ordnet Farben Luminanzwerten zu und bietet reiche Farbtiefe und klare Details in jedem heruntergeladenen Schwarzweißfoto.
+                </p>
+            </div>
+
+            <!-- 8 -->
+            <div class="faq-item">
+                <h3 class="question">Kann ich die Farben von Schwarzweißfotos invertieren, um ein einzigartiges Filmnegativ-Erscheinungsbild zu erhalten?</h3>
+                <p class="answer">
+                    Auf jeden Fall. Wenn du die Farben auf Schwarzweißfotos invertierst, werden die monochromatischen Töne umgekehrt — Schwarz wird Weiß und umgekehrt — und die klassische Ästhetik von Filmnegativen in Sekundenschnelle wiedergegeben.
+                </p>
+            </div>
+
+            <!-- 9 -->
+            <div class="faq-item">
+                <h3 class="question">Ist es möglich, Bilder oder Foto-Dateien in Batches gleichzeitig zu invertieren?</h3>
+                <p class="answer">
+                    Derzeit verarbeitet unser Tool eine Datei nach der anderen, um lokale Sicherheit ohne Uploads zu gewährleisten. Wiederholen Sie einfach die Schritte, um Bilder oder Foto-Dateien nacheinander zu invertieren.
+                </p>
+            </div>
+
+            <!-- 10 -->
+            <div class="faq-item">
+                <h3 class="question">Welche Dateitypen werden beim Invertieren von Farben, Invertieren von Bildern oder Erstellen von Schwarzweißfotos unterstützt?</h3>
+                <p class="answer">
+                    Du kannst Farben invertieren oder in Schwarzweißfotos konvertieren aus JPG-, PNG-, WebP-, BMP- und GIF-Dateien bis zu 20 MB Größe, direkt in jedem modernen Browser.
+                </p>
+            </div>
+        </div>
+
+        <footer>
+            Copyright 2025 &copy; <a href="../" style="color:#333;">Farben Invertieren & Bilder Invertieren</a>. Alle Rechte vorbehalten.
+        </footer>
+    </div>
+
+    <script src="../assets/js/index.js"></script>
+    <script>
+        // Language switching function
+        function switchLanguage(lang) {
+            const langPaths = {
+                'en': '../',
+                'zh': '../zh/',
+                'ja': '../ja/',
+                'es': '../es/',
+                'fr': '../fr/',
+                'de': '../de/',
+                'it': '../it/',
+                'ko': '../ko/'
+            };
+            
+            if (langPaths[lang]) {
+                window.location.href = langPaths[lang];
+            }
+        }
+    </script>
+</body>
+
+</html>
