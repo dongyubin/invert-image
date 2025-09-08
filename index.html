@@ -263,7 +263,7 @@
             </div>
         </div>
 
-        
+
 
         <div id="resultSection" class="card section-hidden fade-in">
             <h2>Processed Results</h2>
@@ -533,70 +533,109 @@
                     <li class="tutorial-step">
                         <strong>Step 1: Upload Your Image</strong>
                         <p class="step-description">
-                            Go to Free Invert Colors Online in your web browser. You'll see a simple upload area where you can either drag and drop your image file or click to browse your device's files.
+                            Go to Free Invert Colors Online in your web browser. You'll see a simple upload area where
+                            you can either drag and drop your image file or click to browse your device's files.
                         </p>
                         <div class="tutorial-image-container">
-                            <img src="./assets/images/Upload-Your-Image.png" alt="Upload-Your-Image" class="tutorial-image">
+                            <img src="./assets/images/Upload-Your-Image.png" alt="Upload-Your-Image"
+                                class="tutorial-image">
                         </div>
                     </li>
                     <li class="tutorial-step">
                         <strong>Step 2: Select the Invert Colors Option</strong>
                         <p class="step-description">
-                            Once your image is uploaded, you'll notice a simple interface with processing options. Select "Invert Colors" to activate the color inversion process.
+                            Once your image is uploaded, you'll notice a simple interface with processing options.
+                            Select "Invert Colors" to activate the color inversion process.
                         </p>
                         <div class="tutorial-image-container">
-                            <img src="./assets/images/Select-the-Invert-Colors-Option.png" alt="Select-the-Invert-Colors-Option" class="tutorial-image">
+                            <img src="./assets/images/Select-the-Invert-Colors-Option.png"
+                                alt="Select-the-Invert-Colors-Option" class="tutorial-image">
                         </div>
                     </li>
                     <li class="tutorial-step">
                         <strong>Step 3: Process Image</strong>
                         <p class="step-description">
-                            After selecting your desired options, click the "Process Image" button. The tool will instantly process your image and apply the selected effects.
+                            After selecting your desired options, click the "Process Image" button. The tool will
+                            instantly process your image and apply the selected effects.
                         </p>
                     </li>
                     <li class="tutorial-step">
                         <strong>Step 4: Download Your Results</strong>
                         <p class="step-description">
-                            Once the processing is complete, you'll see a "Download Result" button. Click this button to save your edited image to your device.
+                            Once the processing is complete, you'll see a "Download Result" button. Click this button to
+                            save your edited image to your device.
                         </p>
                         <div class="tutorial-image-container">
-                            <img src="./assets/images/Invert-Colors-Result.png" alt="Download-Invert-Colors-Result" class="tutorial-image">
+                            <img src="./assets/images/Invert-Colors-Result.png" alt="Download-Invert-Colors-Result"
+                                class="tutorial-image">
                         </div>
                     </li>
                 </ol>
                 </p>
             </div>
-        </div>
 
+            <div class="faq-item">
+                <h3 class="question">Can you invert a black and white image?</h3>
+                <p class="answer">
+                    Luckily, you don't need to do any of the math or thinking when planning to invert colors on a
+                    digital photo, as almost every photo app nowadays has this option and does the conversion
+                    automatically for you. Both black and white and color images can be easily inverted with no effort.
+                    Simply upload the image you want to invert and select the "Invert Colors" option. The tool will take
+                    care of the rest.
+            </div>
+
+            <div class="faq-item">
+                <h3 class="question">What is the inverse of black and white?</h3>
+                <p class="answer">
+                    Experiment with color inversion.
+
+                    When you invert a black-and-white photo, the white pixels become black pixels and vice versa. But if
+                    you invert a color image, the resulting photo will have a flipped color scheme.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3 class="question">What is the color inversion of black and white?</h3>
+                <p class="answer">
+                    Color inversion applies to everything on your device, including media. For example, black text on a
+                    white screen becomes white text on a black screen. There can be issues with color quality or
+                    legibility.
+                </p>
+            </div>
+
+        </div>
+    </div>
     </div>
 
     <footer>
         <p>© 2025 Image Processing Tool - Free online editor for designers, photographers and creators</p>
         <p>All image processing happens in your browser - your files never leave your device</p>
     </footer>
-    </div>
+</body>
 
-    <script src="./assets/js/index.js"></script>
-    <script>
-        // Language switching function
-        function switchLanguage(lang) {
-            if (lang === '') return;
+</html>
 
-            const langPaths = {
-                'zh': 'zh/',
-                'ja': 'ja/',
-                'es': 'es/',
-                'fr': 'fr/',
-                'de': 'de/',
-                'it': 'it/',
-                'ko': 'ko/'
-            };
+<script src="./assets/js/index.js"></script>
+<script>
+    // Language switching function
+    function switchLanguage(lang) {
+        if (lang === '') return;
 
-            if (langPaths[lang]) {
-                window.location.href = langPaths[lang];
-            }
+        const langPaths = {
+            'zh': 'zh/',
+            'ja': 'ja/',
+            'es': 'es/',
+            'fr': 'fr/',
+            'de': 'de/',
+            'it': 'it/',
+            'ko': 'ko/'
+        };
+
+        if (langPaths[lang]) {
+            window.location.href = langPaths[lang];
         }
-    </script>
+    }
+</script>
 </body>
 
 </html>
